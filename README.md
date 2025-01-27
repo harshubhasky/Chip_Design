@@ -86,14 +86,26 @@ Steps followed in the System Software:
 3. Assembler: Converts the code in the compiler into binary form.
 
 Steps followed to create the chip:
+![steps](https://github.com/user-attachments/assets/1d25b21a-d61e-4f9b-a2f0-1ff4688b85df)
 1. RTL is written.
 2. Foundry provides details (in the form of a PDK) about the component capabilites used to build the chip.
 3. RTL and PDK are given to EDA tools.
    The steps performed by the EDA are:
    i) Synthesis of RTL into a netlist of gates.
         ![netlist](https://github.com/user-attachments/assets/ada98132-5232-4d72-b2e4-ff263b08177f)
-   ii) Placement and Routing of the gates.
-4. GDS is generated and sent to a foundry where the chip is fabricated.
+   ii) Floor Planning: Deciding where all the major blocks(macros) are placed within the chip.
+        ![floorplan](https://github.com/user-attachments/assets/adfc534e-6704-4256-8dc8-b9ca097afa22)
+   iii) Power Planning: Planning how the supply and ground connections are routed to all the logic gates.
+        ![power_planning](https://github.com/user-attachments/assets/b67d226e-920d-4df4-bfc5-8ef660d96e39)
+   iv) Placement: Relative placement of gates for optimal routing and to minimize signal delays.
+        ![placement](https://github.com/user-attachments/assets/acfa5190-187a-4825-a024-dfc7af097d37)
+   v) Clock Tree Synthesis
+        ![clock](https://github.com/user-attachments/assets/2cdf7227-7601-45ea-bf28-f0e67122306b)
+   vi) Routing
+        ![routing](https://github.com/user-attachments/assets/cd5d704f-8ca6-415e-9a9d-f2512e857644)
+   vii) Sign off: It consists of DRC(Design Rules Check), LVS(Layout Vs Schematic) and STA(Atatic Timing Analyisis).
+   
+5. GDS is generated and sent to a foundry where the chip is fabricated.
 
 
 
