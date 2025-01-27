@@ -34,3 +34,15 @@ Macros: They are pure digital logic.
 
 ## RISC-V Instruction Set Architecture(ISA)
 This is a language of computers and a way we talk to computers.
+![code](https://github.com/user-attachments/assets/5d3348a7-c7dc-4ffe-a00f-0a71a071be64)
+
+For example we have a C-program as we can see in the picture to the left. We can also see the interior of a chip present inside a laptop in the picture to the right. If this C-program needs to be run on this particular layout, then we need to pass the info(code) to the harwarde in certain terms. 
+
+Steps that are followed to achive this:
+1. C-program is complied in its assembly langauge program (RISC-V Assembly Language Program in this case)
+2. Assembly language program is converted into Machine Learning Programe (a.k.a, Binary Language Program which is the logic of 1s and 0s. In the code it is currently present in a hexa-decimal format.)
+3. The bits get excecuted in the layout and we get the required output.
+
+There is another interface that needs to be present between RISC-V Arcitecture and the layout, it is nothing but the hardware description langauge(picture to the bottom).
+We need to implement the RISC-V specificationd using some RTL(picorv32 cpu core is used here). this RTL implements the specifications of the RISCV architecture.
+Finaly from the RTL to Layout it is a standard RTL to GDS flow.
