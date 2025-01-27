@@ -57,10 +57,19 @@ It is the detailed information about the position, dimension and the connections
 <sub>Example of GDS</sub>
 
 What is PDK(Process Design Kit)?
-It is the interface between the foundry and the designers. It tells the designers the capability of the hardware that can be manufactured, such as: speed, voltage levels, temperature ranges, variability of the components, etc.
+It is the interface between the foundry and the designers.
+A PDK consits of the following:
+1. Proccess design rules
+2. Device models (eg: NMOS, PMOS, Ressistors, Capacitors)
+3. Digital standard cell libraries (eg: OR gate, AND gate, D-FlipFlop)
+4. Input/Ouput libraries
+5. Process control parameters (eg: speed, voltage levels, temperature ranges, variability of the components, etc.)
 
 What is EDA(Electronic Design Automation)?
 EDA is a set of sowtware tools that helps automate the design process of a chip. (In this project we will using *OpenLANE*)
+![EDA](https://github.com/user-attachments/assets/2cb8a1d2-9cb6-4261-a0a7-fe799515aece)
+<sub>Various Tasks Perfomed by EDA Tools</sub>
+
 
 ## What is the connection between hardware and software?
 Now let's understand how the computer, which works only based on 1s and 0s, understand the various types of data we feed into the applications present in our computers.
