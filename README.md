@@ -2,7 +2,7 @@
 ## Introduction to Chip
 In this project, let's go over all the fundamentals: from designing a chip to (fill it in later) 
 We have all seen an aurdino board somewhere or somehow. In this project we will be talking about the industry that lies within its chip. <br>
-<img style="display:block; margin-left:auto; margin-right:auto;" src="https://github.com/user-attachments/assets/82672ee3-3fd6-4f87-a3df-453ea3a69706" width="400" height="300" />
+<img style="display:block; width:400px; margin-left:auto; margin-right:auto;" src="https://github.com/user-attachments/assets/82672ee3-3fd6-4f87-a3df-453ea3a69706" height="300" />
 
 In general when we want to create our own board, the below image is the typical board template.
 ![board]<img src="https://github.com/user-attachments/assets/f3ef0874-e3c8-455b-b366-8b5f4aea96ec" width="400" height="300" />
