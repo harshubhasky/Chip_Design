@@ -4,7 +4,7 @@ In this project, let's go over all the fundamentals: from designing a chip to (f
 We have all seen an Arduino board somewhere or somehow. In this project, we will be talking about the industry that lies within its chip. <br>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/82672ee3-3fd6-4f87-a3df-453ea3a69706" width="350" height="300"/>
+  <img src="https://github.com/user-attachments/assets/82672ee3-3fd6-4f87-a3df-453ea3a69706" width="400" height="250"/>
 </p>
 
 
