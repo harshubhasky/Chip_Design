@@ -126,7 +126,15 @@ OpenLANE also has a large number of design examples - it has 43 designs with thi
 
 ## OpenLANE ASIC FLow
 
+Note: ASIC → Application Specific IC
 
+1. RTL Synthesis: The RTL is fed to the Yosys with the design contraints. Yosys traslates the RTL into circuits using engineering componants. This circuit can be optimized and then mapped into cells from the library using abc. 'abc' has to be guided during the omptimization. And this comes in the form of 'abc' scripts.
+
+2. Synthesis Exploration: Different designs can use diff startegies to achive objectives that can be used to genereate reports that show how the design delay and area is affected by the synthesis strategy, and based on this exploration we can pick the best strategy to continue with. (PASTE IMG)
+
+3. Design Exploration Utilty: It can be used to sweep the design configurations and generate reports. (PASTE IMG)
+   It can also be used for Regression Testing needed for content integration. (IMG)
+4. 
                   
 
 
