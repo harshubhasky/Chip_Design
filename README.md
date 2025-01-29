@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/6ae0ba78-0561-4620-b674-f2e7b12174f8)# Chip_Design
+# Chip_Design
 ## Introduction to Chip
 In this project, let's go over all the fundamentals: from designing a chip to (fill it in later) 
 We have all seen an aurdino board somewhere or somehow. In this project we will be talking about the industry that lies within its chip. 
