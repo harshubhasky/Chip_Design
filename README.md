@@ -2,16 +2,16 @@
 ## Introduction to Chip
 In this project, let's go over all the fundamentals: from designing a chip to (fill it in later)  
 We have all seen an Arduino board somewhere or somehow. In this project, we will be talking about the industry that lies within its chip. <br>
-
 <p align="center">
   <img src="https://github.com/user-attachments/assets/82672ee3-3fd6-4f87-a3df-453ea3a69706" width="400" height="250"/>
 </p>
 
-
-
-
 In general when we want to create our own board, the below image is the typical board template.
-![board]<img src="https://github.com/user-attachments/assets/f3ef0874-e3c8-455b-b366-8b5f4aea96ec" width="400" height="300" />
+<br>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f3ef0874-e3c8-455b-b366-8b5f4aea96ec" width="400" height="220"/>
+</p>
+
 When we open up this processor, it will look like this:
 ![opened_processor](https://github.com/user-attachments/assets/0a1903e6-49f9-435b-927a-fe0faa0e7cbf)
 We generally know this image as a '*chip*' but a better term for it would be '*package*'. An example for a package in the real world is *QFN-48*. We have many more as well though. The locations of the pins of this package are all driven by the board. 
