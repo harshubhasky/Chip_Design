@@ -107,6 +107,28 @@ Steps followed to create the chip:
    
 5. GDS is generated and sent to a foundry where the chip is fabricated.
 
+## OpenLANE
+
+Main goal: To produce a clean GDS with no human intervention (no-human-in-the-loop)
+Here clean means: 1. No LVS Violations
+                  2. No DRC Violations
+                  3. No Timing Violations
+                  
+OpenLANE can be used to hardern Macros and Chips. (Harden means to generate the GDS to implement Macros or Chips)
+
+It has two modes of opperation:
+   1. Autonomous: We configure the flow, then push button to get the final GDS.
+   2. Interactive: We can run commands one by one so that we can expirement and look at the immediate results for each step.
+
+It has a very nice feature called *Design Space Exploration*. It is used to find the best set of flow configurations.
+
+OpenLANE also has a large number of design examples - it has 43 designs with thier best configurations as of now.
+
+## OpenLANE ASIC FLow
+
+
+                  
+
 
 
 
