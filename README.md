@@ -9,7 +9,7 @@ We have all seen an Arduino board somewhere or somehow. In this project, we will
 In general when we want to create our own board, the below image is the typical board template.
 <br>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/f3ef0874-e3c8-455b-b366-8b5f4aea96ec" width="600" height="380"/>
+  <img src="https://github.com/user-attachments/assets/f3ef0874-e3c8-455b-b366-8b5f4aea96ec" width="600" height="340"/>
 </p>
 
 When we open up this processor, it will look like this:
@@ -20,17 +20,22 @@ When we open up this processor, it will look like this:
 We generally know this image as a '*chip*' but a better term for it would be '*package*'. An example for a package in the real world is *QFN-48*. We have many more as well though. The locations of the pins of this package are all driven by the board. 
 The chip generally sits in the center of the package.
 <p align="center">
-  <img src="https://github.com/user-attachments/assets//e4e49d26-a777-48e5-a13f-33f71cdb0142" width="600" height="440"/>
+  <img src="https://github.com/user-attachments/assets/e4e49d26-a777-48e5-a13f-33f71cdb0142" width="600" height="440"/>
 </p>
 
 As we can see, the pins of the chip are connected to the pins of the package using *bond wires*. And in this way are able to transfer all the signals that are coming from the outside world to the interiors of the chip.
 Important Componants of a Chip:
-![chip_parts](https://github.com/user-attachments/assets/33351714-bcab-4e99-9d64-40feb9676018)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/33351714-bcab-4e99-9d64-40feb9676018" width="600" height="420"/>
+</p>
+
 Pads: Pads help us send signals inside/outside the chip
 Core: A place where all the digital logic sits (and-gate, or-gate, etc.)
 Die: Size of the entire chip
 Let's take an RISCV chip as an example and observe the parts it contains in its core.
-![RISVC](https://github.com/user-attachments/assets/8b105cad-eb10-41c3-ad34-5d6e4cd230c4)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8b105cad-eb10-41c3-ad34-5d6e4cd230c4" width="600" height="400"/>
+</p>
 
 The parts marked with the arrows to the right are called *Foundry IPs*. 
 
@@ -46,13 +51,16 @@ Macros: They are pure digital logic.
 
 ## RISC-V Instruction Set Architecture(ISA)
 This is a language of computers and a way we talk to computers.
-![code](https://github.com/user-attachments/assets/5d3348a7-c7dc-4ffe-a00f-0a71a071be64)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5d3348a7-c7dc-4ffe-a00f-0a71a071be64" width="700" height="400"/>
+</p>
+
 
 For example we have a C-program as we can see in the picture to the left. We can also see the interior of a chip present inside a laptop in the picture to the right. If this C-program needs to be run on this particular layout, then we need to pass the information(code) to the harwarde in certain terms. 
 
 Steps that are followed to achive this:
-1. C-program is complied to its assembly langauge program (RISC-V Assembly Language Program in this case)
-2. Assembly language program is converted into Machine-Readable Programe (a.k.a, Binary Language Program which is the logic of 1s and 0s. In the code it is currently present in a hexa-decimal format.)
+1. C-program is complied to its assembly language program (RISC-V Assembly Language Program in this case)
+2. Assembly language program is converted into Machine-Readable Program (a.k.a, Binary Language Program which is the logic of 1s and 0s. In the code it is currently present in a hexa-decimal format.)
 3. The bits get excecuted in the hardware and we get the required output.
 
 To convert the RISC-V Arcitecture into hardware  
@@ -65,7 +73,10 @@ It is code written to describe the physical logic present in the chip at a high 
 
 What is GDS(Graphic Data System)?
 It is the detailed information about the position, dimension and the connections between the components of the chip.
-![gds](https://github.com/user-attachments/assets/dbd8c700-7852-4219-9428-b190df072dbb)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/dbd8c700-7852-4219-9428-b190df072dbb" width="700" height="500"/>
+</p>
+
 <sub>Example of GDS</sub>
 
 What is PDK(Process Design Kit)?
@@ -79,7 +90,10 @@ A PDK consits of the following:
 
 What is EDA(Electronic Design Automation)?
 EDA is a set of sowtware tools that helps automate the design process of a chip. (In this project we will using *OpenLANE*)
-![EDA](https://github.com/user-attachments/assets/2cb8a1d2-9cb6-4261-a0a7-fe799515aece)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2cb8a1d2-9cb6-4261-a0a7-fe799515aece" width="700" height="500"/>
+</p>
+
 <sub>Various Tasks Perfomed by EDA Tools</sub>
 
 
@@ -90,7 +104,9 @@ The overall sequence goes like this:
 1. Application Software
 2. System Software
 3. Hardware
-![system_software](https://github.com/user-attachments/assets/1196657a-0420-4fd0-b0b5-9bc38d9cdb73)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1196657a-0420-4fd0-b0b5-9bc38d9cdb73" width="750" height="500"/>
+</p>
 
 Steps followed in the System Software:
 1. OS: It has a programes that manage the hardware.
