@@ -105,7 +105,7 @@ The overall sequence goes like this:
 2. System Software
 3. Hardware
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1196657a-0420-4fd0-b0b5-9bc38d9cdb73" width="750" height="500"/>
+  <img src="https://github.com/user-attachments/assets/1196657a-0420-4fd0-b0b5-9bc38d9cdb73" width="750" height="450"/>
 </p>
 
 Steps followed in the System Software:
@@ -177,22 +177,31 @@ OpenLANE also has a large number of design examples - it has 43 designs with thi
 ## OpenLANE ASIC FLow
 
 Note: ASIC → Application Specific IC
-![ASIC flow](https://github.com/user-attachments/assets/3367bf33-a3e0-43e7-9bfc-590cf1a2fa25)
+ <p align="center">
+             <img src="https://github.com/user-attachments/assets/3367bf33-a3e0-43e7-9bfc-590cf1a2fa25" width="700" height="450"/>
+  </p> 
+
 
 1. RTL Synthesis [Tool → Yosys & abc]: The RTL is fed to the Yosys with the design contraints. Yosys traslates the RTL into circuits using engineering componants. This circuit can be optimized and then mapped into cells from the library using abc. 'abc' has to be guided during the omptimization. And this comes in the form of 'abc' scripts.
 
 2. Static Timing Analysis [Tool → OpenSTA]: Sometimes the logic from a gate will go through different paths and come together in the end to combine and give some output. If the different paths have different delays then the momentary output would be incorrect. The flip flops in the circuit may accidentally store the momentarily changed value instead of correct final value and this can create logic errors. This tool checks for such timing issues created due to the logic taking different paths. If there are such errors, we have to give inputs to the tool to avoid such timing violations.
    
 3. Design for Test: Additional circuits added in the design that help in testing the chips after fabrication.
-   ![design for test](https://github.com/user-attachments/assets/c39c9f37-37d9-44dc-a60e-bc094f76f7f9)
+    <p align="center">
+             <img src="https://github.com/user-attachments/assets/c39c9f37-37d9-44dc-a60e-bc094f76f7f9" width="700" height="450"/>
+    </p>
+  
                     It has a few steps:
                      i) Scan Insertion
                      ii) Automatic Test Pattern Generation(ATPG)
                      iii) Fault Coverage
                      iv) Fault Simulation
    
-4. Physical Implementation [Tool → OPENROAD]:
-   ![Physical imple](https://github.com/user-attachments/assets/aac7dfb0-eeef-4754-bf59-495299b30e63)
+5. Physical Implementation [Tool → OPENROAD]:
+    <p align="center">
+             <img src="https://github.com/user-attachments/assets/aac7dfb0-eeef-4754-bf59-495299b30e63" width="300" height="350"/>
+    </p>
+   
                      Steps:
                      i) Floor Planning
                      ii) Power Planning
@@ -202,15 +211,15 @@ Note: ASIC → Application Specific IC
                      vi) Antenna Diode Insertion
                      vii) Routing: Global and Detailed
 
-5. Logic Equivalance Check(LEC) [Tool → Yosys]: Since some of the previous steps such as *clock tree synthesis* and *post-placement       
+7. Logic Equivalance Check(LEC) [Tool → Yosys]: Since some of the previous steps such as *clock tree synthesis* and *post-placement       
    optimization* would have edited the *netlist*, we now have to make sure that the final design is still equivalent to the original netlist we 
    generated at the synthesis stage.
 
-6. Detailed Routing [Tool → TritonRoute]
+8. Detailed Routing [Tool → TritonRoute]
    
-7. Post-Layout RC Extraction and STA and Physical Verification [Tool → OpenSTA, magic, netgen]
+9. Post-Layout RC Extraction and STA and Physical Verification [Tool → OpenSTA, magic, netgen]
    
-8. GDS generation for fabrication
+10. GDS generation for fabrication
                   
 
 
