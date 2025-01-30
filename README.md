@@ -74,7 +74,7 @@ It is code written to describe the physical logic present in the chip at a high 
 What is GDS(Graphic Data System)?
 It is the detailed information about the position, dimension and the connections between the components of the chip.
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/dbd8c700-7852-4219-9428-b190df072dbb" width="700" height="500"/>
+  <img src="https://github.com/user-attachments/assets/dbd8c700-7852-4219-9428-b190df072dbb" width="700" height="550"/>
 </p>
 
 <sub>Example of GDS</sub>
@@ -114,23 +114,45 @@ Steps followed in the System Software:
 3. Assembler: Converts the code in the compiler into binary form.
 
 Steps followed to create the chip:
-![steps](https://github.com/user-attachments/assets/1d25b21a-d61e-4f9b-a2f0-1ff4688b85df)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1d25b21a-d61e-4f9b-a2f0-1ff4688b85df" width="750" height="300"/>
+</p>
+
 1. RTL is written.
 2. Foundry provides details (in the form of a PDK) about the component capabilites used to build the chip.
 3. RTL and PDK are given to EDA tools.
    The steps performed by the EDA are:
    i) Synthesis of RTL into a netlist of gates.
-        ![netlist](https://github.com/user-attachments/assets/ada98132-5232-4d72-b2e4-ff263b08177f)
+        <p align="center">
+          <img src="https://github.com/user-attachments/assets/ada98132-5232-4d72-b2e4-ff263b08177f" width="750" height="300"/>
+        </p> 
+  
    ii) Floor Planning: Deciding where all the major blocks(macros) are placed within the chip.
-        ![floorplan](https://github.com/user-attachments/assets/adfc534e-6704-4256-8dc8-b9ca097afa22)
+         <p align="center">
+          <img src="https://github.com/user-attachments/assets/adfc534e-6704-4256-8dc8-b9ca097afa22" width="600" height="400"/>
+        </p> 
+      
+   
    iii) Power Planning: Planning how the supply and ground connections are routed to all the logic gates.
-        ![power_planning](https://github.com/user-attachments/assets/b67d226e-920d-4df4-bfc5-8ef660d96e39)
+         <p align="center">
+          <img src="https://github.com/user-attachments/assets/b67d226e-920d-4df4-bfc5-8ef660d96e39" width="600" height="300"/>
+        </p> 
+       
    iv) Placement: Relative placement of gates for optimal routing and to minimize signal delays.
-        ![placement](https://github.com/user-attachments/assets/acfa5190-187a-4825-a024-dfc7af097d37)
+         <p align="center">
+          <img src="https://github.com/user-attachments/assets/acfa5190-187a-4825-a024-dfc7af097d37" width="600" height="400"/>
+        </p> 
+      
    v) Clock Tree Synthesis
-        ![clock](https://github.com/user-attachments/assets/2cdf7227-7601-45ea-bf28-f0e67122306b)
+         <p align="center">
+          <img src="https://github.com/user-attachments/assets/2cdf7227-7601-45ea-bf28-f0e67122306b" width="600" height="400"/>
+        </p> 
+     
    vi) Routing
-        ![routing](https://github.com/user-attachments/assets/cd5d704f-8ca6-415e-9a9d-f2512e857644)
+        <p align="center">
+             <img src="https://github.com/user-attachments/assets/cd5d704f-8ca6-415e-9a9d-f2512e857644" width="600" height="400"/>
+         </p> 
+       
    vii) Sign off: It consists of DRC(Design Rules Check), LVS(Layout Vs Schematic) and STA(Atatic Timing Analyisis).
    
 5. GDS is generated and sent to a foundry where the chip is fabricated.
