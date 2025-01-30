@@ -9,14 +9,20 @@ We have all seen an Arduino board somewhere or somehow. In this project, we will
 In general when we want to create our own board, the below image is the typical board template.
 <br>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/f3ef0874-e3c8-455b-b366-8b5f4aea96ec" width="600" height="320"/>
+  <img src="https://github.com/user-attachments/assets/f3ef0874-e3c8-455b-b366-8b5f4aea96ec" width="600" height="380"/>
 </p>
 
 When we open up this processor, it will look like this:
-![opened_processor](https://github.com/user-attachments/assets/0a1903e6-49f9-435b-927a-fe0faa0e7cbf)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0a1903e6-49f9-435b-927a-fe0faa0e7cbf" width="600" height="440"/>
+</p>
+
 We generally know this image as a '*chip*' but a better term for it would be '*package*'. An example for a package in the real world is *QFN-48*. We have many more as well though. The locations of the pins of this package are all driven by the board. 
 The chip generally sits in the center of the package.
-![bond_wires](https://github.com/user-attachments/assets/e4e49d26-a777-48e5-a13f-33f71cdb0142)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets//e4e49d26-a777-48e5-a13f-33f71cdb0142" width="600" height="440"/>
+</p>
+
 As we can see, the pins of the chip are connected to the pins of the package using *bond wires*. And in this way are able to transfer all the signals that are coming from the outside world to the interiors of the chip.
 Important Componants of a Chip:
 ![chip_parts](https://github.com/user-attachments/assets/33351714-bcab-4e99-9d64-40feb9676018)
