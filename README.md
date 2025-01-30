@@ -9,7 +9,7 @@ We have all seen an Arduino board somewhere or somehow. In this project, we will
 In general when we want to create our own board, the below image is the typical board template.
 <br>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/f3ef0874-e3c8-455b-b366-8b5f4aea96ec" width="400" height="220"/>
+  <img src="https://github.com/user-attachments/assets/f3ef0874-e3c8-455b-b366-8b5f4aea96ec" width="600" height="320"/>
 </p>
 
 When we open up this processor, it will look like this:
