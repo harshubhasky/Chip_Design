@@ -1,4 +1,8 @@
 # Chip_Design
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/75a9573a-0fd2-46ee-8bff-d7d02f78477a" width="1200" height="300"/>
+</p>
+
 ## Introduction to Chip
 <details>
 <summary>Let's learn the fundamentals! 🦾</summary>
