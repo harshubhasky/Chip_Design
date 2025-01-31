@@ -381,6 +381,122 @@ Expand command shows the actual d flipflop layout containing mosfets. But routin
 </p>
 
 
+**DAY 3**
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/74858ac2-3699-479f-b2e3-3ba480358ca3"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/08be97c9-604e-4501-bff1-f27c15d1d2df"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/3f4c123f-0025-4f2f-918c-517372479215"/>
+</p>
+
+Command “drc check” shows drc errors (highlighted as white dotted regions in layout)
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/f138321c-9c8d-4ae0-a52d-4bbe95d3e370" width="300"/>
+</p>
+
+
+Command “drc why” shows drc error reason that transistor width is insufficient
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/d29f2556-55db-4d13-8d0c-ed2cc2a6a67b" width="300"/>
+</p>
+
+
+Select nwell region
+erase nwell
+Click a region to expand the pdiff to remove drc violation 
+paint pdiff
+Click a region to expand the ndiff to remove drc violation
+paint ndiff
+
+With above commands, the DRC violation is fixed
+
+((Above commands are learnt with help of chat-gpt to know what commands to type to fix the DRC error))
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/7c91a171-f29d-4e4e-8d1a-180103348fd4" width="300"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/ab440c08-a441-461c-92c7-bc54071c967e" width="300"/>
+</p>
+
+
+Extracting spice netlist from layout
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/88e3f8d1-3815-4937-9c5d-9e5c6fc6be09"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/f0da9528-fc3e-4154-83bf-5ccc63b1ce33"/>
+</p>
+
+
+File edited for stand-alone simulation in ngspice
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/793aed13-5c80-4a5b-897c-45696f569454"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/63d9c07c-754e-497e-bcd9-c8ca8881a0c0"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/33e7eab4-fc2c-4b76-a28b-384318829297"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/b30c3953-47aa-46de-b88e-41490bd497d5"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/0a5b53b9-fdde-4197-86a1-9bf772d2c6da"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/00ec5217-8876-415b-b0a3-29a60f8660a2"/>
+</p>
+
+
+DRC Error Fixing Lab
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/8c41e57b-d096-48a6-a280-f4220e25217d"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/fd88b91d-e2c5-4a73-bfd3-3ba821742347"/>
+</p>
+
+
+Open the poly.mag file
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/72eba9d5-4a6c-4e2f-bf7c-8601768b1717"/>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
