@@ -1,5 +1,7 @@
 # Chip_Design
 ## Introduction to Chip
+<details>
+<summary>Click to Expand</summary>
 In this project, let's go over all the fundamentals: from designing a chip to (fill it in later)  
 We have all seen an Arduino board somewhere or somehow. In this project, we will be talking about the industry that lies within its chip. <br>
 <p align="center">
@@ -48,8 +50,11 @@ It requires intelligence to build the blocks in the chip.
 
 The parts marked with the arrows to the right are called *Macros*. 
 Macros: They are pure digital logic.
+</details>
 
 ## RISC-V Instruction Set Architecture(ISA)
+<details>
+<summary>Click to Expand</summary>
 This is a language of computers and a way we talk to computers.
 <p align="center">
   <img src="https://github.com/user-attachments/assets/5d3348a7-c7dc-4ffe-a00f-0a71a071be64" width="700" height="400"/>
@@ -95,7 +100,7 @@ EDA is a set of sowtware tools that helps automate the design process of a chip.
 </p>
 
 <sub>Various Tasks Perfomed by EDA Tools</sub>
-
+</details>
 
 ## What is the connection between hardware and software?
 Now let's understand how the computer, which works only based on 1s and 0s, understand the various types of data we feed into the applications present in our computers.
@@ -190,7 +195,6 @@ Note: ASIC → Application Specific IC
     <p align="center">
              <img src="https://github.com/user-attachments/assets/c39c9f37-37d9-44dc-a60e-bc094f76f7f9" width="700" height="450"/>
     </p>
-  
                     It has a few steps:
                      i) Scan Insertion
                      ii) Automatic Test Pattern Generation(ATPG)
@@ -201,7 +205,6 @@ Note: ASIC → Application Specific IC
     <p align="center">
              <img src="https://github.com/user-attachments/assets/aac7dfb0-eeef-4754-bf59-495299b30e63" width="300" height="350"/>
     </p>
-   
                      Steps:
                      i) Floor Planning
                      ii) Power Planning
