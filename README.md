@@ -1,7 +1,7 @@
 # Chip_Design
 ## Introduction to Chip
 <details>
-<summary>Click to Expand</summary>
+<summary>Let's learn the fundamentals! 🦾</summary>
 In this project, let's go over all the fundamentals: from designing a chip to (fill it in later)  
 We have all seen an Arduino board somewhere or somehow. In this project, we will be talking about the industry that lies within its chip. <br>
 <p align="center">
