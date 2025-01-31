@@ -220,6 +220,103 @@ Note: ASIC → Application Specific IC
 9. Post-Layout RC Extraction and STA and Physical Verification [Tool → OpenSTA, magic, netgen]
    
 10. GDS generation for fabrication
+
+<br><br>
+<span style="font-size: 20px; font-weight: bold;">Implementation:</span>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/e75176ae-bdc0-459c-b7cb-e3e6d9328201" width="650"/>
+</p>
+
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/e84a0593-9b9e-4d96-aca5-0991c8688f2b" width="650"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/d8d18fb6-6117-4d88-9e4a-e4bedd3559e6" width="800"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/25c6f6e3-1d62-464b-9e6b-1117fc4c27b4" width="800"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/5e9168ae-4232-4d3d-a549-c3a4ce095eaf" width="800"/>
+</p>
+The config.tcl file here summarizes all the parameters that are finally used in the execution. Using this file we know what all parameters are set for this run.
+
+Synthesis 
+Also runs ABC - what is it ? It does the technology mapping
+run_synthesis was the command that gave this success output
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/f2b45552-ab03-40af-b1a9-8d33171742a4" width="600"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/ac7064b2-ed95-44f6-b187-fa66526f11b3" width="600"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/e098193d-04ae-46af-8531-c8a9c84efd4f" width="300"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/c462e306-39d5-466f-a6cf-58f38ac097ed" width="800"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/a38ebc64-4eca-4a72-be09-9e957487a883" width="800"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/c57867b5-dc25-45d2-b7d3-1aebcf743d44" width="800"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/915736c6-82d4-41cf-b5a3-9baf85b065f0" width="500"/>
+</p>
+Flop ratio = 1613/14876 =10.84%
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/2a03431d-1b89-45b4-9971-da7316ae2034" width="800"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/96d30830-5321-4111-9a70-f59c8cf01373" width="700"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/502fdeca-faa8-49e7-bc9e-733cf14fb884" width="600"/>
+</p>
+Slack violated
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                   
 
 
