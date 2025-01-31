@@ -124,7 +124,7 @@ Steps followed in the System Software:
 
 Steps followed to create the chip:
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1d25b21a-d61e-4f9b-a2f0-1ff4688b85df" width="750" height="300"/>
+  <img src="https://github.com/user-attachments/assets/1d25b21a-d61e-4f9b-a2f0-1ff4688b85df" width="650" height="300"/>
 </p>
 
 1. RTL is written.
@@ -138,28 +138,28 @@ Steps followed to create the chip:
   
    ii) Floor Planning: Deciding where all the major blocks(macros) are placed within the chip.
          <p align="center">
-          <img src="https://github.com/user-attachments/assets/adfc534e-6704-4256-8dc8-b9ca097afa22" width="600" height="400"/>
+          <img src="https://github.com/user-attachments/assets/adfc534e-6704-4256-8dc8-b9ca097afa22" width="300" height="300"/>
         </p> 
       
    
    iii) Power Planning: Planning how the supply and ground connections are routed to all the logic gates.
          <p align="center">
-          <img src="https://github.com/user-attachments/assets/b67d226e-920d-4df4-bfc5-8ef660d96e39" width="600" height="300"/>
+          <img src="https://github.com/user-attachments/assets/b67d226e-920d-4df4-bfc5-8ef660d96e39" width="400" height="300"/>
         </p> 
        
    iv) Placement: Relative placement of gates for optimal routing and to minimize signal delays.
          <p align="center">
-          <img src="https://github.com/user-attachments/assets/acfa5190-187a-4825-a024-dfc7af097d37" width="600" height="400"/>
+          <img src="https://github.com/user-attachments/assets/acfa5190-187a-4825-a024-dfc7af097d37" width="400" height="300"/>
         </p> 
       
    v) Clock Tree Synthesis
          <p align="center">
-          <img src="https://github.com/user-attachments/assets/2cdf7227-7601-45ea-bf28-f0e67122306b" width="600" height="400"/>
+          <img src="https://github.com/user-attachments/assets/2cdf7227-7601-45ea-bf28-f0e67122306b" width="400" height="300"/>
         </p> 
      
    vi) Routing
         <p align="center">
-             <img src="https://github.com/user-attachments/assets/cd5d704f-8ca6-415e-9a9d-f2512e857644" width="600" height="400"/>
+             <img src="https://github.com/user-attachments/assets/cd5d704f-8ca6-415e-9a9d-f2512e857644" width="400" height="300"/>
          </p> 
        
    vii) Sign off: It consists of DRC(Design Rules Check), LVS(Layout Vs Schematic) and STA(Atatic Timing Analyisis).
@@ -494,6 +494,181 @@ Open the poly.mag file
 <p align="center">
              <img src="https://github.com/user-attachments/assets/8ac331ff-dd26-4e23-a6ea-75298e6719c0"/>
 </p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/adcf0a10-f1e2-4ab5-b251-5d149b4afd8f"/>
+</p>
+
+
+Polyres to poly spacing is only 0.21um.
+But it should be atleast 0.48um
+This drc error is not encoded in the tech file so it is not showing as error but fab cannot fabricate this without issues.
+
+Hence we need to fix the tech file to include this rule and then fix the layout to meet that rule.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/2430630c-ef9f-4a5a-8a7c-a83580f6d806"/>
+</p>
+
+
+Before editing techfile
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/2a4c1431-a51d-44f5-a354-0b558c946f2d"/>
+</p>
+
+After editing techfile
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/fd6526d1-c6e3-4a3b-9318-6bfb3c4f0a9e"/>
+</p>
+
+
+Before editing techfile
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/d4e28f7a-c425-4849-a96a-98192da9ff25"/>
+</p>
+
+After editing techfile
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/9195d3a4-4e5c-4816-9343-3f82f124a7b0"/>
+</p>
+
+
+In tkcon windowtech load sky130A.techdrc check
+Now we see white dotted region
+Showing drc error for polyres to poly spacing violation
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/1b5304f8-f88f-4db6-aef2-864623ba8f68"/>
+</p>
+
+
+Our newly added drc error message shows up for the drc why command after selecting the region of interest in the layout.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/001f08e2-bb76-4d91-b5a5-829e712696b4"/>
+</p>
+
+
+Click to make a bounding box around the poly region that we want to copy.
+
+Go to Edit and click Select Area
+
+Move your cursor to the location where you want to copy and press “c”
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/898381d8-c403-4f39-b01d-02007f6525a8"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/885e9fef-30a4-40d0-84b0-791a618d03dd"/>
+</p>
+
+
+
+Before editing
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/bc91438c-a346-4d43-a2da-3ea64aa08540"/>
+</p>
+
+After editing
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/f7e980e0-453e-40b4-9daf-b3fd92c2b67c"/>
+</p>
+
+
+After loading updated techfile, we can now see the drc errors for the poly to ndiff and pdiff regions.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/bebcd48b-a729-46b5-8b33-9d223f1f5be8"/>
+</p>
+
+
+Fixing errors in difftap.2 rules
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/db00e45e-1b3e-4ada-b2a7-e37611f3c338"/>
+</p>
+
+
+difftap.2 rule shows no violation. 
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/24c2b9fc-0218-46af-aa0f-0b44bd141593"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/271cc3cf-8552-489a-9920-65056dccf013"/>
+</p>
+
+
+These lines are added to the tech file to catch the difftap.2 rule violation
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/16d55e84-e5f5-4933-aa13-0964c780d64a"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/ec58add8-5037-4739-b22b-2c237051bc69"/>
+</p>
+
+
+NWELL drc rule fix
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/b766cee1-07dd-4350-9553-0e4e1bebd376"/>
+</p>
+
+
+Open nwell.mag file in magic. 
+The selected region is filled with deep nwell
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/f053bdaf-d49c-486c-8d1c-f6b97570d78e"/>
+</p>
+
+The nwell is drawn as four rectangular regions as highlighted individually above. These 4 regions together form a square nwell region with a hole in the middle without nwell.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/c2221106-796f-433e-94bf-33c726954da5"/>
+</p>
+
+
+Deepnwell to nwell width is only 0.56um
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/ea2d8782-f178-45f4-b765-67dfdf881f0f"/>
+</p>
+
+The drc error region (white dotted region) correctly points out that it should be 1.03um at the least.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/66f30e45-1d93-478e-9e9f-81524a6d85ad"/>
+</p>
+
+
+How magic is able to find the inside edge of dnwell not covered with nwell ?.
+It uses a templayer nwell_missing 
+Where it makes dnwell grow by 0.4um and_not with dnwell shrink of 1.03um and-not with nwell region. If anything remains, then it is a drc error.
+This complicated rule is compute intensive. But in some cases this is the only way to catch drc errors.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/9e17243f-df4b-45d8-860c-f786dec5692d"/>
+</p>
+
+
+Nwell.4 not implemented
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/c785b1b1-ddba-4c66-a924-0b15f7a7236b"/>
+</p>
+
+
+Hence there is no DRC error even though no contact is placed on this nwell.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/d1d8fc0a-5872-4903-b4fd-5e1cb7f685cd"/>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
