@@ -254,7 +254,7 @@ Also runs ABC - what is it ? It does the technology mapping
 run_synthesis was the command that gave this success output
 
 <p align="center">
-             <img src="https://github.com/user-attachments/assets/f2b45552-ab03-40af-b1a9-8d33171742a4" width="600"/>
+             <img src="https://github.com/user-attachments/assets/f2b45552-ab03-40af-b1a9-8d33171742a4" width="800"/>
 </p>
 
 
@@ -287,15 +287,107 @@ Flop ratio = 1613/14876 =10.84%
 <p align="center">
              <img src="https://github.com/user-attachments/assets/2a03431d-1b89-45b4-9971-da7316ae2034" width="800"/>
 </p>
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/7dcf6d3c-05f4-4b46-aa1c-2b93ae7af128" width="400"/>
+</p>
+
 
 <p align="center">
-             <img src="https://github.com/user-attachments/assets/96d30830-5321-4111-9a70-f59c8cf01373" width="700"/>
+             <img src="https://github.com/user-attachments/assets/96d30830-5321-4111-9a70-f59c8cf01373" width="800"/>
 </p>
 
 <p align="center">
-             <img src="https://github.com/user-attachments/assets/502fdeca-faa8-49e7-bc9e-733cf14fb884" width="600"/>
+             <img src="https://github.com/user-attachments/assets/502fdeca-faa8-49e7-bc9e-733cf14fb884" width="700"/>
 </p>
 Slack violated
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/1b25056a-b05f-4952-9530-6c7d29162591"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/261ae0d8-d6a1-49bd-9899-1b14ca726258"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/6cd8f7ab-bf42-44ee-ae9f-6cdd31374e1f"/>
+</p>
+After updating configuration to use 
+SYNTH_STRATEGY as DELAY 0, we can check in the config.tcl whether it was correctly setup for processing.
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/06d80fc0-e309-464b-93d9-7e5081b2b461"/>
+</p>
+This config.tcl has more precedence than the configuration folder settings…
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/f878c58d-1b25-4640-a303-cc4118b37eca"/>
+</p>
+
+
+**DAY 2:**
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/0371b203-b668-49e9-b851-e47d6c56ae21"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/8ba5f9d4-3a36-4464-b26c-8d63e0c512fe"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/baecead9-3c3a-4a80-b096-f6782127d017"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/783850d8-625b-4920-8307-e014dc8abebd"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/b6973a95-4f19-4880-9435-0b84c6b32596"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/ad0cdae7-7790-4fb8-8ab6-25d7663aec79"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/90b49af7-caf1-473c-81b1-04d01e7d1dc9"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/481187fd-f560-48a4-8e92-4a611f026a86"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/153ba737-a10a-48fb-9892-464cb3e53c19"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/d5c8d201-4d34-4f50-add0-63639e7f5586"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/307c9530-6239-4253-8b39-0890a99cd996"/>
+</p>
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/9cdac5f1-7afc-4336-9f3a-3b0ff3db8580"/>
+</p>
+
+
+Expand command shows the actual d flipflop layout containing mosfets. But routing of the dflip flop to other gates not done yet.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/22f06bda-5b10-41a8-8cdc-4a9139f6fe1a"/>
+</p>
+
+
+
+
+
+
+
+
+
 
 
 
