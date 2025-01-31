@@ -657,6 +657,57 @@ Hence there is no DRC error even though no contact is placed on this nwell.
 </p>
 
 
+These lines are added to the tech file to catch the missing tap contact
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/a74d4a83-4fa2-42cd-a7ed-f460b750f388"/>
+</p>
+
+The techfile is once again loaded in tkcon window and the drc style is set to full and drc is executed. Now the missing rule is implemented and we get the drc errors as expected.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/0625030f-1fd6-4ff5-9a9a-c70de28ec598"/>
+</p>
+
+
+DAY 4
+
+For Place and Route, we dont need all layout info (the one available in .mag file). We only need LEF file ( the boundary of the cell, the pin locations). Also this way, we can also protect our layout IP.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/cde2c1b0-0bbc-4e51-acb6-cd5fb2cfd247"/>
+</p>
+
+
+For us to be able to use a custom layout file for a standard cell and use it in openlane flow, we have to meet certain criteria so that it plays well along with other such standard cells and can be used by the tool for auto placement and routing.
+
+Requirements:
+The input and output pins of any standard cell should lie on the intersection of the vertical and horizontal tracks.
+The width of standard cell should be odd multiple of horizontal track pitch
+The height of the standard cell should be even multiple of vertical track pitch
+
+
+Input and output pins are on li1 layer. So we look for li1 track info. 
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/06b45147-3803-47f7-9f74-79c7491888ae"/>
+</p>
+This information is used to set grid size in magic
+
+
+This positioning enables the Routing tool to get a metal routing to these pins correctly.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/108eb1a4-a5a0-4bda-a15e-2f0ffacd0095"/>
+</p>
+
+
+Horizontal pitch matches with the odd multiple of track pitch requirement.
+Width of standard cell = 1.38um = 3*0.46um
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/51b203d4-4cc4-4551-b8ad-66d080adfa17"/>
+</p>
+
+
+
+
+
+
 
 
 
