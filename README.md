@@ -339,7 +339,7 @@ These are the three folders we find inside the pdks folder.
 
 <details>
 <summary>𝙾𝚙𝚎𝚗𝙻𝙰𝙽𝙴 𝙲𝚘𝚖𝚖𝚊𝚗𝚍 𝙵𝚕𝚘𝚠</summary>
-
+<p></p>
 Commands to Start OpenLANE EDA Tool
 	
 ```python
