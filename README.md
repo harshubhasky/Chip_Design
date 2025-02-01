@@ -235,7 +235,7 @@ Note: ASIC → Application Specific IC
 10. GDS generation for fabrication
 </details>
 
-##<span style="color: red;"> Course Implementation Overview</span>
+## Course Implementation Overview
 <details>
 <summary>OpenLANE and PDK Directory Structure</summary>
 
@@ -271,6 +271,72 @@ These are three folders we find inside the pdks folder.
 <p>
  	**open_pdk:** This folder contains scripts that acts as a bridge between what the Foundry provides and what the open 		EDA tools expect. This takes in the raw PDK data from foundry (skywater-pdk) and converts them to a format that is 		suitable for open source tools (sky130A) to use.
  </p>
+
+**Commands to start openlane EDA tool**
+#	docker
+$	./flow.tcl -interactive
+%    package require openlane 0.9
+%    prep -design picorv32a
+Above commands will be used every time we setup the openLANE EDA tool.
+
+**OpenLANE Command Flow**
+The major steps we follow to take in the RTL and PDK information and generate a GDS file for Foundry fabrication are executed using the following sequence of commands.
+
+**% run_synthesis**
+This command executes yosys, the synthesis tool along with ABC, the technology mapping tool to generate a verilog netlist that contains the gate level description of circuit that is equivalent to the RTL we provided. 
+
+**Input:** RTL and PDK
+
+**Output:** verilog netlist (gate level details and their connectivity) that is equivalent to our behavior RTL description of the logic.
+
+**Reports:** Die Area estimate, list of cells used, Timing information (and any violations present)
+
+*An important question to address : What do we do if there are timing violations ?
+	→ We will later see how we address the timing violations. We will now focus on the main flow of the tool but let us keep this in mind so we can revisit this later.*
+
+**% run_floorplan**
+This step takes in our verilog netlist and also any macros used in our design (such as Memory, IP, macros etc) and places the macros along with decoupling capacitors, the input and output pins of our design and also dumps all the cells used in our verilog design. 
+
+**Input:** Verilog netlist, the library of standard cells 
+**Output:** .def file (Design Exchange Format) → describes the placement details of the cells.
+
+*An important question to address: Where do library cells come from ?. These are telling the tool what gates are available, how its layout looks like and how its electrical behavior will be (delays). If we want to create our own library cell, what is the way to do it ?.*
+
+We will also answer this question at a later time when we discuss Standard Library Cell design and Characterization
+**Note:** Sometimes, we get error when executing run_floorplan. In such cases, we can run the following commands in sequence which is equivalent to running the run_floorplan command.
+**%init_floorplan**
+**%place_io**
+**%tap_decap_or**
+**%run_placement**
+
+This command does the actual placement of all the logic cells used in our design. The placement is optimized based on the connectivity of the various cells in order to minimize delays.
+
+**Input:** Takes in the .def file from floorplan and updates the cell locations that were previously dumped by properly arranging them optimally within the core region of the die.
+**Output:** .def file 
+
+**% run_cts**
+Once placement of all cells are done, we now know where all the flipflops are located. These flip flops require a clock signal. A clock signal is a square wave. At every rising or falling edge of the clock signal, all the flip flops take action. The input of the flops come from combinational logic outputs. The output of the flop goes through another combinational logic before reaching the input of another flop. This the Flops are connected through combinational logic paths. A clock acts like a heart beat for a chip. All flops have to work synchronously to take action on the combinational inputs they receive. For this to happen, the clock signal transitions should reach all the flops at the same instant. To achieve this, the clock is fed through many buffers (two inverters in series) which balances the clock signal propagation delays such that all flops get the clock transitions at around the same time.
+**Input:** .def file from run_placement output, .lef file for standard cells, .lib file for timing information
+**Output:** Modified verilog netlist that now includes these clock buffer cells as well as the updated .def file with clock buffer placement.
+
+**%gen_pdn**
+This step generates the power distribution network. This is a grid of supply and ground routing that covers the entire core region so that all logic cells have easy and local access to the power supply lines. This helps reduce the IR drop in power and ground routings and ensures correct operation of the logic cells.
+**Input:** .def file from run_cts output, .lef file for the cells 
+**Output:** .def file that now includes the power and ground grid mesh, and .lef file.
+**%run_routing**
+This is an iterative process where all the logic cells’ input and output pins are routing in metal as per the netlist connectivity. There are several routing strategies and algorithms to perform this automation and is an interesting field of research, especially with AI technology. 
+**Input:** .def file from gen_pdn output
+**Output:** .def file, the final layout and .lef file. It also generates .spef file for parasitic extraction. SPEF is a standard parasitic extraction format to include routing resistance and capacitance in the verilog netlist so that it can be used to find timing information post layout and check for any timing violations.
+
+**The final steps to send GDS to Foundry**
+Using MAGIC tool, we execute some final checks and generate the GDS file. I think we are not executing these final steps as part of this Course. But the details of these final checks are summarized below.
+Final Checks:
+**#1 STA:** Run one final Static Timing Analysis using the SPEF file and make sure that there are no TIMING Violations.
+**#2 LVS:** We noted that the verilog netlist generated by synthesis tool is repeatedly edited by other tools such as CTS, SPEF extractor etc. Sometimes, engineers can also edit the verilog netlist manually (called ECO , Engineering Change Order) to manually fix any timing violations by replacing a logic gate with a faster version of the same logic gate. So we need to verify whether the final netlist is still representing the logic equivalence to the original RTL.
+**#3 DRC:** Since the library cells are locally created by engineers, they may have some Design rule violations. Also, during routing phase, the tool might have violated some design rules. So a final DRC check is run to ensure all design rules suggested by Foundry are still met in our final design.
+**#4 Antenna Diode check:** During fabrication, the metal layers are fabricated layer by layer. So if there is a long metal route, the metal will be hanging on one end as the next metal layer is yet to be fabricated. During this time, any stray electric signals can be picked by the long metal trace acting as antenna and that could potentially harm the underlying components connected to that metal trace. To protect the circuits, antenna diodes are added which acts as an alternative safe path for the stray charges picked up by the metal to reach ground or supply terminals. These are verified at this final stage and any necessary changes are automatically done by the EDA tool to protect circuits during fabrication steps.
+**#5 Final GDSII generation:** MAGIC creates the required GDS format from the .def and .lef files and it can be sent electronically to foundry and we wait for the chip to be sent back to use from the foundry.
+
   
 <br><br>
 <span style="font-size: 20px; font-weight: bold;">Implementation Overview:</span>
