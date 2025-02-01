@@ -270,8 +270,9 @@ These are three folders we find inside the pdks folder.
 **open_pdk:** This folder contains scripts that acts as a bridge between what the Foundry provides and what the open 		EDA tools expect. This takes in the raw PDK data from foundry (skywater-pdk) and converts them to a format that is 		suitable for open source tools (sky130A) to use.
 
 </details>
+
 <details>
-**Commands to start openlane EDA tool**
+<summary>Commands to start openlane EDA tool</summary>
 #docker
 $./flow.tcl -interactive
 %package require openlane 0.9
