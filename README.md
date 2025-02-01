@@ -1347,8 +1347,7 @@ The .SPEF file is also generated automatically. So we proceed with final timing 
 
 
 
-
-## How is a Chip Made?
+## Chip Fabrication Steps:
 
 ### #1 Creating an Isolation Region
 ![image](https://github.com/user-attachments/assets/b26ab5db-74d0-49b9-ac57-141a6e153db1)
@@ -1390,6 +1389,25 @@ The .SPEF file is also generated automatically. So we proceed with final timing 
    ![image](https://github.com/user-attachments/assets/19a0f089-d3e5-4077-b52e-107e530ecc2a)
 6. Only the area under the Photoresist remains and we obtain our gates.
    ![image](https://github.com/user-attachments/assets/60d67641-a640-4b2a-ae31-f0a062870eb9)
+
+### #4 Lightly Doped Drain Formation(LDD)
+ Two reasons for doing this are to prevent: → Hot electron effect
+				            → Short channel effect
+1. Phosphorus is very lightly doped at the surface level of the P-well.
+   ![image](https://github.com/user-attachments/assets/ada24080-f6af-4b46-928c-b9b6a25993c1)
+2. SImilarly Boron is also very lightly doped on the surface of the N-well.
+   ![image](https://github.com/user-attachments/assets/6fdcd325-e14a-4845-aef9-4248df0bc64b)
+3. Since these layer are very thin, we need to protect them. To do this, *Plsama Anisotropic Etching* is done using Silicon Nitrate.
+   ![image](https://github.com/user-attachments/assets/228f98c7-c4b5-4bc3-afb9-8fb6d409ca32)
+   The Silicon Nitrate sticks to the ends of the gates and rest gets washed away.
+   ![image](https://github.com/user-attachments/assets/4bdd65a3-e171-49eb-b50b-6f6b5b34ec99)
+   Thus, the doped atoms under the Silicon Nitrate are protected.
+   
+### #5 Source and Drain Formation
+1. A thin screen oxide is added to to prevent the doped ions from directly going to the substrate without hitting anywhere. By adding this, we randomize the direction of the ions.
+   ![image](https://github.com/user-attachments/assets/d38c72ec-f23c-43a0-a8d1-20d030faabe9)
+2. Arsenic is then doped. And we obtain N+,N-,P as required.
+   ![image](https://github.com/user-attachments/assets/b801d5a3-c9dc-4a59-a673-59140c113d5a)
 
 
 
