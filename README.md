@@ -124,7 +124,7 @@ Macros: They are pure digital logic.
 </details>	
 
 
-## RISC-V and OpenLANE
+## RISC-V and OpenLANE 🖥️
 <details>
 <summary>𝚁𝙸𝚂𝙲-𝚅 𝙸𝚗𝚜𝚝𝚛𝚞𝚌𝚝𝚒𝚘𝚗 𝚂𝚎𝚝 𝙰𝚛𝚌𝚑𝚒𝚝𝚎𝚌𝚝𝚞𝚛𝚎(𝙸𝚂𝙰)</summary>
 This is a language of computers and a way we talk to computers.
@@ -302,7 +302,7 @@ Note: ASIC → Application Specific IC
 10. GDS generation for fabrication
 </details>
 
-## Course Implementation Overview
+## Course Implementation Overview ⚙️
 <details>
 <summary>𝙾𝚙𝚎𝚗𝙻𝙰𝙽𝙴 𝚊𝚗𝚍 𝙿𝙳𝙺 𝙳𝚒𝚛𝚎𝚌𝚝𝚘𝚛𝚢 𝚂𝚝𝚛𝚞𝚌𝚝𝚞𝚛𝚎</summary>
 
@@ -475,7 +475,7 @@ Our design is then fully ready for fabrication!
 	</details>
 </details>
 
-## Course Implementation Results
+## Course Implementation Results 📑
 <details>
 <summary>𝙾𝚙𝚎𝚗𝙻𝙰𝙽𝙴 𝙵𝚕𝚘𝚠 𝚁𝚎𝚜𝚞𝚕𝚝𝚜 𝚄𝚗𝚝𝚒𝚕 𝙿𝚕𝚊𝚌𝚎𝚖𝚎𝚗𝚝</summary>	
 	We execute a sequence of commands from openLANE starting from design preparation till placement of cells.
