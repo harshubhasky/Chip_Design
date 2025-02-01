@@ -304,7 +304,7 @@ Note: ASIC → Application Specific IC
 
 ## Course Implementation Overview
 <details>
-<summary>OpenLANE and PDK Directory Structure</summary>
+<summary>𝙾𝚙𝚎𝚗𝙻𝙰𝙽𝙴 𝚊𝚗𝚍 𝙿𝙳𝙺 𝙳𝚒𝚛𝚎𝚌𝚝𝚘𝚛𝚢 𝚂𝚝𝚛𝚞𝚌𝚝𝚞𝚛𝚎</summary>
 
 **Understanding the directory structure of openLANE**
 	
@@ -339,7 +339,7 @@ These are three folders we find inside the pdks folder.
 </details>
 
 <details>
-<summary>Commands to start openlane EDA tool</summary>
+<summary>𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜 𝚝𝚘 𝚂𝚝𝚊𝚛𝚝 𝙾𝚙𝚎𝚗𝙻𝙰𝙽𝙴 𝙴𝙳𝙰 𝚃𝚘𝚘𝚕</summary>
 #docker
 	
 $./flow.tcl -interactive
@@ -352,7 +352,7 @@ Above commands will be used every time we setup the openLANE EDA tool.
 </details>
 
 <details>
-<summary>OpenLANE Command Flow</summary>
+<summary>𝙾𝚙𝚎𝚗𝙻𝙰𝙽𝙴 𝙲𝚘𝚖𝚖𝚊𝚗𝚍 𝙵𝚕𝚘𝚠</summary>
 
 The major steps we follow to take in the RTL and PDK information and generate a GDS file for Foundry fabrication are executed using the following sequence of commands.
 
@@ -432,7 +432,7 @@ Using MAGIC tool, we execute some final checks and generate the GDS file. I thin
 **#5 Final GDSII generation:** MAGIC creates the required GDS format from the .def and .lef files and it can be sent electronically to foundry and we wait for the chip to be sent back to use from the foundry.
 </details>
 <details>
-<summary>Lab Exercises Overview:</summary>
+<summary>𝙻𝚊𝚋 𝙴𝚡𝚎𝚛𝚌𝚒𝚜𝚎𝚜 𝙾𝚟𝚎𝚛𝚟𝚒𝚎𝚠:</summary>
 	<details>
 		<summary>OpenLane Flow:</summary>
 		We will now go through the process of synthesizing, floorplanning and placement of our design.  And look at the timing reports as well as the 		def file showing the placement of cells. 
@@ -477,7 +477,7 @@ Our design is then fully ready for fabrication!
 
 ## Course Implementation Results
 <details>
-<summary>OpenLane Flow Results until placement</summary>	
+<summary>𝙾𝚙𝚎𝚗𝙻𝙰𝙽𝙴 𝙵𝚕𝚘𝚠 𝚁𝚎𝚜𝚞𝚕𝚝𝚜 𝚄𝚗𝚝𝚒𝚕 𝙿𝚕𝚊𝚌𝚎𝚖𝚎𝚗𝚝</summary>	
 	We execute a sequence of commands from openLANE starting from design preparation till placement of cells.
 	<details>
 	<summary>Lab Exercise:OpenLane Synthesis</summary>
@@ -625,7 +625,7 @@ We have now successfully completed the openLANE execution flow until placement. 
 
 </details>
 <details>
-<summary>Custom Cell Design Results</summary>	
+<summary>𝙲𝚞𝚜𝚝𝚘𝚖 𝙲𝚎𝚕𝚕 𝙳𝚎𝚜𝚒𝚐𝚗 𝚁𝚎𝚜𝚞𝚕𝚝𝚜</summary>	
 	For this exercise, we clone a github repository as shown below.
 
 ```python
@@ -691,7 +691,7 @@ Next we explore more of MAGIC and learn how to interpret DRC rules and how to ad
 </details>	
 
 <details>
-<summary>Lab Exercise:Custom Cell Design DRC Experiments</summary>
+<summary>𝙻𝚊𝚋 𝙴𝚡𝚎𝚛𝚌𝚒𝚜𝚎: 𝙲𝚞𝚜𝚝𝚘𝚖 𝙲𝚎𝚕𝚕 𝙳𝚎𝚜𝚒𝚐𝚗 𝙳𝚁𝙲 𝙴𝚡𝚙𝚎𝚛𝚒𝚖𝚎𝚗𝚝𝚜</summary>
 DRC Error Fixing Lab
 <p align="center">
              <img src="https://github.com/user-attachments/assets/8c41e57b-d096-48a6-a280-f4220e25217d"/>
