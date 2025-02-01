@@ -411,6 +411,7 @@ Our design is then fully ready for fabrication!
 ## Course Implementation Results
 <details>
 <summary>OpenLane Flow Results until placement</summary>	
+	We execute a sequence of commands from openLANE starting from design preparation till placement of cells.
 	<details>
 	<summary>Lab Exercise:OpenLane Synthesis</summary>
 
@@ -554,6 +555,7 @@ Expand command in magic tkcon window shows the actual d flipflop layout containi
 
 We have now successfully completed the openLANE execution flow until placement. We will now take a small detour to understand how to build custom Cell and how to use such custom library cell in openLANE flow. We will then learn how to fix timging violations. And then we will return back to openLANE flow and execute the complete flow till gds creation.
 	</details>	 
+-----------------------------------------------------------------------------------------------------------
 </details>
 <details>
 <summary>Custom Cell Design Results</summary>	
