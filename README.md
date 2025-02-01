@@ -1426,9 +1426,9 @@ This concludes the creation of GDS file which can be sent to Foundry for Chip ma
 
 <p></p>
 
-<br></br>
-
-<p></p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e5821c94-e2a3-4782-b9eb-c9cddfbfac3f" width="1200" height="100"/>
+</p>
 
 ## Acknowledgements
 ##### Samsung Semiconductor India Research, *sponsor of Chip Design for High School course*
