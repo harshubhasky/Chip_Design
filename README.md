@@ -561,7 +561,7 @@ We have now successfully completed the openLANE execution flow until placement. 
 <summary>Custom Cell Design Results</summary>	
 	For this exercise, we clone a github repository as shown below.
 
-```python
+```tcl
 # cd to openlane
 cd Desktop/work/tools/openlane_working_dir/openlane
 # Clone the repository
@@ -573,15 +573,16 @@ cp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/
 # magic command to open the inverter layout cell pre-built in this repository.
 magic -T sky130A.tech sky130_inv.mag &
 ```
-	<details>
-	<summary>Lab Exercise:Custom Cell Design DRC Experiments</summary>
-	</details>	
-	<details>
-	<summary>Lab Exercise:Custom Cell Design Magic Layout</summary>
-	</details>	
-	<details>
-	<summary>Lab Exercise:Custom Cell Design Standard Cell Format Results</summary>
-	</details>	
+
+<details>
+<summary>Lab Exercise:Custom Cell Design DRC Experiments</summary>
+</details>	
+<details>
+<summary>Lab Exercise:Custom Cell Design Magic Layout</summary>
+</details>	
+<details>
+<summary>Lab Exercise:Custom Cell Design Standard Cell Format Results</summary>
+</details>	
 </details>
 <details>
 <summary>STA and Timing Violations Fix Results</summary>	
