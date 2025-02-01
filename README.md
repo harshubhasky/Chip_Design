@@ -5,7 +5,7 @@
 
 ## Let's learn the fundamentals! 🦾
 <details>
-	<summary><span style="font-size: larger;">Introduction to 'Chip'</span></summary>	
+	<summary>𝙸𝚗𝚝𝚛𝚘𝚍𝚞𝚌𝚝𝚒𝚘𝚗 𝚝𝚘 '𝙲𝚑𝚒𝚙'</summary>	
 	
 In this project, let's go over all the fundamentals: from designing a chip to (fill it in later)  
 We have all seen an Arduino board somewhere or somehow. In this project, we will be talking about the industry that lies within its chip. <br>
@@ -58,7 +58,7 @@ Macros: They are pure digital logic.
 </details>
 
 <details>
-<summary>Steps of Fabricating a Chip</summary>
+<summary>𝚂𝚝𝚎𝚙𝚜 𝚘𝚏 𝙵𝚊𝚋𝚛𝚒𝚌𝚊𝚝𝚒𝚗𝚐 𝚊 𝙲𝚑𝚒𝚙</summary>
 
 ## Chip Fabrication Steps:
 ### #1 Creating an Isolation Region
