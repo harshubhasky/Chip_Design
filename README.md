@@ -405,14 +405,18 @@ In our design, we will try both option ii) and iii) to fix our timing violations
 We then proceed with floorplanning, placement, clock tree synthesis, routing, final timing analysis, power delivery network generation and parasitic extraction(SPEF) and post extraction timing analysis. 
 
 Our design is then fully ready for fabrication!
-
+	</details>
 </details>
 <details>
 <summary>Lab Exercise:OpenLane Synthesis</summary>
 </details>	
 <details>
-<summary>Lab Exercise:OpenLane Synthesis</summary>
+<summary>Lab Exercise:OpenLane floorplan</summary>
 </details>	
+<details>
+<summary>Lab Exercise:OpenLane placement</summary>
+</details>	
+
 
 
 
