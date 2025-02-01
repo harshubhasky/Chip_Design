@@ -560,7 +560,7 @@ We have now successfully completed the openLANE execution flow until placement. 
 <details>
 <summary>Custom Cell Design Results</summary>	
 	For this exercise, we clone a github repository as shown below.
-
+```
 # cd to openlane
 cd Desktop/work/tools/openlane_working_dir/openlane
 
@@ -574,7 +574,7 @@ cd vsdstdcelldesign
 cp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech .
 
 # magic command to open the inverter layout cell pre-built in this repository.
-magic -T sky130A.tech sky130_inv.mag &
+magic -T sky130A.tech sky130_inv.mag & ```
 	<details>
 	<summary>Lab Exercise:Custom Cell Design DRC Experiments</summary>
 	</details>	
