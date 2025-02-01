@@ -1315,30 +1315,8 @@ The .SPEF file is also generated automatically. So we proceed with final timing 
              <img src="https://github.com/user-attachments/assets/4f67171d-6d50-4cea-b940-e5969b2573fc"/>
 </p>
 
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/ac7064b2-ed95-44f6-b187-fa66526f11b3" width="600"/>
-</p>
-
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/e098193d-04ae-46af-8531-c8a9c84efd4f" width="300"/>
-</p>
-
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/c462e306-39d5-466f-a6cf-58f38ac097ed" width="800"/>
-</p>
-
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/a38ebc64-4eca-4a72-be09-9e957487a883" width="800"/>
-</p>
-
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/c57867b5-dc25-45d2-b7d3-1aebcf743d44" width="800"/>
-</p>
 	
 </details>
-
-
-
 
 
 <br><br>
@@ -1356,29 +1334,6 @@ The .SPEF file is also generated automatically. So we proceed with final timing 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-**DAY 3**
-
-
-
-
-
-
-
-
-DAY 4
 
 
 
@@ -1450,7 +1405,26 @@ DAY 4
 
 
 
+Below are some images we can later insert into the documentation to explain openLANE flow
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/ac7064b2-ed95-44f6-b187-fa66526f11b3" width="600"/>
+</p>
 
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/e098193d-04ae-46af-8531-c8a9c84efd4f" width="300"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/c462e306-39d5-466f-a6cf-58f38ac097ed" width="800"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/a38ebc64-4eca-4a72-be09-9e957487a883" width="800"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/c57867b5-dc25-45d2-b7d3-1aebcf743d44" width="800"/>
+</p>
 
 
 
