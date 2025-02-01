@@ -58,7 +58,7 @@ Macros: They are pure digital logic.
 </details>
 
 <details>
-<summary>Introduction to "Chip on the inside" </summary>
+<summary>Introduction to the "Chip on the inside" </summary>
 
 ## Chip Fabrication Steps:
 ### #1 Creating an Isolation Region
