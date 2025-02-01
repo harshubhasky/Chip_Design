@@ -1420,16 +1420,17 @@ The GDS file is now generated successfully.
 This concludes the creation of GDS file which can be sent to Foundry for Chip manufacturing.
 </details>
 
-<p> </p>
+<p></p>
 
-<p> </p>
+<br></br>
 
-<p> </p>
+<p></p>
 
-### Acknowledgements
+<br></br>
 
-***
+<p></p>
 
+## Acknowledgements
 ##### Samsung Semiconductor India Research, *sponsor of Chip Design for High School course*
 ##### Kunal Ghosh, *Co-founder, VSD Corp. Pvt. Ltd.*
 ##### Mohammed Fayiz Ferosh, *reference github provided by VSD*
