@@ -573,59 +573,7 @@ cp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/
 # magic command to open the inverter layout cell pre-built in this repository.
 magic -T sky130A.tech sky130_inv.mag &
 ```
-
-<details>
-<summary>Lab Exercise:Custom Cell Design DRC Experiments</summary>
-</details>	
-<details>
-<summary>Lab Exercise:Custom Cell Design Magic Layout</summary>
-</details>	
-<details>
-<summary>Lab Exercise:Custom Cell Design Standard Cell Format Results</summary>
-</details>	
-</details>
-<details>
-<summary>STA and Timing Violations Fix Results</summary>	
-	
-</details>
-<details>
-<summary>Comple OpenLane Flow Results using Custom Library Cell </summary>	
-	
-</details>
-
-
-
-
-
-<br><br>
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**DAY 3**
+The results of the command execution are shown below
 <p align="center">
              <img src="https://github.com/user-attachments/assets/74858ac2-3699-479f-b2e3-3ba480358ca3"/>
 </p>
@@ -637,7 +585,10 @@ magic -T sky130A.tech sky130_inv.mag &
 <p align="center">
              <img src="https://github.com/user-attachments/assets/3f4c123f-0025-4f2f-918c-517372479215"/>
 </p>
+Next we will learn how to fix DRC errors in this inverter cell and get it DRC clean.
 
+<details>
+<summary>Lab Exercise:Custom Cell Design usign Magic Layout</summary>
 Command “drc check” shows drc errors (highlighted as white dotted regions in layout)
 <p align="center">
              <img src="https://github.com/user-attachments/assets/f138321c-9c8d-4ae0-a52d-4bbe95d3e370" width="300"/>
@@ -659,7 +610,7 @@ paint ndiff
 
 With above commands, the DRC violation is fixed
 
-((Above commands are learnt with help of chat-gpt to know what commands to type to fix the DRC error))
+[Above commands are learnt from http://opencircuitdesign.com/magic/index.html]
 
 <p align="center">
              <img src="https://github.com/user-attachments/assets/7c91a171-f29d-4e4e-8d1a-180103348fd4" width="300"/>
@@ -669,48 +620,11 @@ With above commands, the DRC violation is fixed
              <img src="https://github.com/user-attachments/assets/ab440c08-a441-461c-92c7-bc54071c967e" width="300"/>
 </p>
 
+Next we explore more of MAGIC and learn how to interpret DRC rules and how to add missing DRC rules into the technology files and how to fix DRC errors in MAGIC.
+</details>	
 
-Extracting spice netlist from layout
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/88e3f8d1-3815-4937-9c5d-9e5c6fc6be09"/>
-</p>
-
-
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/f0da9528-fc3e-4154-83bf-5ccc63b1ce33"/>
-</p>
-
-
-File edited for stand-alone simulation in ngspice
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/793aed13-5c80-4a5b-897c-45696f569454"/>
-</p>
-
-
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/63d9c07c-754e-497e-bcd9-c8ca8881a0c0"/>
-</p>
-
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/33e7eab4-fc2c-4b76-a28b-384318829297"/>
-</p>
-
-
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/b30c3953-47aa-46de-b88e-41490bd497d5"/>
-</p>
-
-
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/0a5b53b9-fdde-4197-86a1-9bf772d2c6da"/>
-</p>
-
-
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/00ec5217-8876-415b-b0a3-29a60f8660a2"/>
-</p>
-
-
+<details>
+<summary>Lab Exercise:Custom Cell Design DRC Experiments</summary>
 DRC Error Fixing Lab
 <p align="center">
              <img src="https://github.com/user-attachments/assets/8c41e57b-d096-48a6-a280-f4220e25217d"/>
@@ -905,8 +819,53 @@ The techfile is once again loaded in tkcon window and the drc style is set to fu
 </p>
 
 
-DAY 4
+</details>	
+<details>
+<summary>Lab Exercise:Custom Cell Design SPICE simulation Results</summary>
+Extracting spice netlist from layout
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/88e3f8d1-3815-4937-9c5d-9e5c6fc6be09"/>
+</p>
 
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/f0da9528-fc3e-4154-83bf-5ccc63b1ce33"/>
+</p>
+
+
+File edited for stand-alone simulation in ngspice
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/793aed13-5c80-4a5b-897c-45696f569454"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/63d9c07c-754e-497e-bcd9-c8ca8881a0c0"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/33e7eab4-fc2c-4b76-a28b-384318829297"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/b30c3953-47aa-46de-b88e-41490bd497d5"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/0a5b53b9-fdde-4197-86a1-9bf772d2c6da"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/00ec5217-8876-415b-b0a3-29a60f8660a2"/>
+</p>
+
+</details>	
+
+<details>
+<summary>Lab Exercise:Custom Cell Design Standard Cell Format Results</summary>
 For Place and Route, we dont need all layout info (the one available in .mag file). We only need LEF file ( the boundary of the cell, the pin locations). Also this way, we can also protect our layout IP.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/cde2c1b0-0bbc-4e51-acb6-cd5fb2cfd247"/>
@@ -964,7 +923,6 @@ LEF file is generated as shown
              <img src="https://github.com/user-attachments/assets/20ab4f59-92ab-4511-989d-727ca961aa7c"/>
 </p>
 
-
 The LEF file and the technology files are copied over to picorv32a src directory
 <p align="center">
              <img src="https://github.com/user-attachments/assets/726f6948-f843-4958-bb29-a6f085dee1ab"/>
@@ -980,6 +938,64 @@ The following highlighted lines are added to the design config.tcl file
 <p align="center">
              <img src="https://github.com/user-attachments/assets/d24b33e2-b11e-4582-866a-df408ab9ae7b"/>
 </p>
+
+
+</details>	
+</details>
+<details>
+<summary>STA and Timing Violations Fix Results</summary>	
+	
+</details>
+<details>
+<summary>Comple OpenLane Flow Results using Custom Library Cell </summary>	
+	
+</details>
+
+
+
+
+
+<br><br>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**DAY 3**
+
+
+
+
+
+
+
+
+DAY 4
+
+
+
 
 Starting openlane all over from docker setup.
 <p align="center">
