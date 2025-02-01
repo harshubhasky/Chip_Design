@@ -700,7 +700,7 @@ This information is used to set grid size in magic
 
 This positioning enables the Routing tool to get a metal routing to these pins correctly.
 <p align="center">
-             <img src="https://github.com/user-attachments/assets/108eb1a4-a5a0-4bda-a15e-2f0ffacd0095"/>
+             <img src="https://github.com/user-attachments/assets/e03c2d84-67a8-4e3d-a488-6d3b11bf5752"/>
 </p>
 
 
@@ -711,7 +711,196 @@ Width of standard cell = 1.38um = 3*0.46um
 </p>
 
 
+Vertical pitch matches with the even multiple of track vertical pitch requirement.
+Height of standard cell = 2.72um = 0.34um *8
+All three requirements are satisfied by our custom standard cell.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/dcb9d084-1723-4e55-9d31-c39def0cd7dc"/>
+</p>
 
+
+File saved as sky130_inv_newdesign.mag
+LEF file is generated using the command “lef write” in tkcon window.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/3edd6717-03e2-4c57-88a6-55481fcb1eb1"/>
+</p>
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/938037bc-bc4a-4f95-be2d-dd9e2d8e2c18"/>
+</p>
+
+
+LEF file is generated as shown
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/20ab4f59-92ab-4511-989d-727ca961aa7c"/>
+</p>
+
+
+The LEF file and the technology files are copied over to picorv32a src directory
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/726f6948-f843-4958-bb29-a6f085dee1ab"/>
+</p>
+
+The files are copied and correctly getting listed in the src folder as shown below.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/193fa530-91f0-45cb-b2e8-332c521e50e3"/>
+</p>
+
+
+The following highlighted lines are added to the design config.tcl file 
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/d24b33e2-b11e-4582-866a-df408ab9ae7b"/>
+</p>
+
+Starting openlane all over from docker setup.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/e6486fbd-d37b-44fe-9d05-9edfaaead14d"/>
+</p>
+
+The commands below sets up the new LEF we created into OPENLANE flow.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/205b89e6-f521-4fba-857b-0c6d56023f8c"/>
+</p>
+
+Run_synthesis command is then executed and the output is shown below.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/6533d664-a1ac-49d4-b19b-fe91e20cf479"/>
+</p>
+
+Synthesis report file opened to note down total chip area, timing details
+We are not getting the correct cell name sky130_inv_newdesign.
+This is an issue
+
+Since we used a new name for the inverter, it seems to have created a problem. 
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/c4973704-3c49-424e-b378-138565aba69d"/>
+</p>
+
+Fix that will get the correct cell name : Need to edit the characterization library files
+This cell name is changed from sky130_vsdinv to sky130_inv_newdesign
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/2d9d8484-c5b5-4b8a-a01a-65c7a265ccae"/>
+</p>
+
+This cell name is changed from sky130_vsdinv to sky130_inv_newdesign
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/bb64b0d9-19ef-4b95-9da2-ed04b1c366f4"/>
+</p>
+
+This cell name is changed from sky130_vsdinv to sky130_inv_newdesign
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/bb64b0d9-19ef-4b95-9da2-ed04b1c366f4"/>
+</p>
+
+After fixing the library files, we now start over and enter the following commands
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+docker
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a
+
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+
+run_synthesis
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/66b72b76-c031-41d4-be8c-e51aaf9a9162"/>
+</p>
+
+Now the synthesis report is correctly pointing to the new inverter cell name we created!.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/ca70bea9-bfc8-4109-b28b-5823d00fdc69"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/8272af55-74ba-4001-a646-7abf1249346d"/>
+</p>
+
+We reconfigure the settings to improve timing by letting the tool use stronger buffers and allowing for more size but reduce delays in the logic. 
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/d29de27c-b32f-4ab1-ae06-c2097b0d6c54"/>
+</p>
+
+Worst case negative slack is now zero.  And the chip area has increased as expected.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/5d1faf0d-8735-4698-92f6-77263ded46f8"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/4db717ce-61b7-48a0-9715-a17db5406697"/>
+</p>
+
+
+The flow failed.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/f2f8c917-ef21-4f9f-839b-9a47ba642ae6"/>
+</p>
+
+Hence we now try running individual commands that are collectively run by run_floorplan tcl file
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/782ac979-a394-418b-8520-01686e9dc4c8"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/0b766bc9-0357-44f5-ab75-fb6bb1437dad"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/ae37c34b-9964-488e-bce7-c383e233d8a2"/>
+</p>
+
+
+Placement is completed
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/b672b9de-9e62-4f1e-943b-5ce21d284922"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/0d7e2189-6083-4e1f-9b07-febfc48176ed"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/e6f2b23e-bf29-47b9-a7bc-094af80e3db0"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/79454407-3b5a-4586-bc97-bbeab7172301"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/6701f682-0a46-4c7a-aad1-80e175961733"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/88b2aa84-5b61-414a-aef4-177ddb1fdd89"/>
+</p>
+
+
+Learning to run STA with pre-sta.conf and without using synthesis strategy options to compromise die area.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/90a5d44e-89dd-4aab-8dcd-07d96821063a"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/73297090-a671-44e4-98da-c37a8cf8c0a9"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/7cf1b89e-cf40-4110-b797-79a931b6f4cd"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/9beb4b24-73a1-4eb5-9218-c66eb7f1533a"/>
+</p>
 
 
 
