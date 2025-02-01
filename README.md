@@ -905,6 +905,57 @@ Learning to run STA with pre-sta.conf and without using synthesis strategy optio
              <img src="https://github.com/user-attachments/assets/9beb4b24-73a1-4eb5-9218-c66eb7f1533a"/>
 </p>
 
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/5cb6bfd8-0776-4e9a-bf8c-fadca562fe50"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/d73a01dc-2819-4b9f-939e-fa34215cc4a8"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/ff09c9a7-9005-46f5-b499-e8c3b54cad21"/>
+</p>
+
+Start over again but this time try some config settings
+![image](https://github.com/user-attachments/assets/d32ce484-9ac5-4a98-8462-4d6b7dcd9976)
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/d32ce484-9ac5-4a98-8462-4d6b7dcd9976"/>
+</p>
+
+Trying new configuration settings
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/64313b23-b526-46f0-93a1-d533c83c1c5d"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/0a0b3572-58bc-406f-8686-877fb27945e8"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/a6196ee5-e74f-4e6b-957f-3ab0770ae675"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/527c5760-19e2-4cd7-8789-9604fe3dfa67"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/b552c3b2-637b-4add-a231-86db677303e8"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/0a8c35b7-aa8d-4b3d-aae9-e91a7bc2996d"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/7700a6b4-7119-4789-8073-a55534a1d53a"/>
+</p>
 
 
 
