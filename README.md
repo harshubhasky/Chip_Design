@@ -1385,7 +1385,7 @@ The .SPEF file is also generated automatically. So we proceed with final timing 
 
 Next we have to generate gds file. It is not clear how to proceed further. However, when looked into the flow.tcl file, it showed the next steps after routing.
 <p align="center">
-![image](https://github.com/user-attachments/assets/df03728f-83af-4533-bc21-d349131ce2ed)
+<img src="https://github.com/user-attachments/assets/df03728f-83af-4533-bc21-d349131ce2ed"/>
 </p>
 
 However, running the command %run_magic gave an error that the variable DIE_AREA is not defined in mag_gds.tcl.
