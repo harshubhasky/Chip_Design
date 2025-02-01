@@ -533,6 +533,7 @@ It is hard to see where the cells are placed in the layout. This is because floo
 	<details>
 	<summary>Lab Exercise:OpenLane placement</summary>
 	</details>	
+The run_placement command outputs are shown below. The generated .def file and .lef file are passed to magic tool to see the final placement results.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/d5c8d201-4d34-4f50-add0-63639e7f5586"/>
 </p>
@@ -551,12 +552,12 @@ Expand command in magic tkcon window shows the actual d flipflop layout containi
              <img src="https://github.com/user-attachments/assets/22f06bda-5b10-41a8-8cdc-4a9139f6fe1a"/>
 </p>
 
-
-
+We have now successfully completed the openLANE execution flow until placement. We will now take a small detour to understand how to build custom Cell and how to use such custom library cell in openLANE flow. We will then learn how to fix timging violations. And then we will return back to openLANE flow and execute the complete flow till gds creation.
  
 </details>
 <details>
 <summary>Custom Cell Design Results</summary>	
+	For this exercise, we use 
 	<details>
 	<summary>Lab Exercise:Custom Cell Design DRC Experiments</summary>
 	</details>	
