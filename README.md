@@ -119,8 +119,27 @@ Macros: They are pure digital logic.
 ### #5 Source and Drain Formation
 1. A thin screen oxide is added to to prevent the doped ions from directly going to the substrate without hitting anywhere. By adding this, we randomize the direction of the ions.
    ![image](https://github.com/user-attachments/assets/d38c72ec-f23c-43a0-a8d1-20d030faabe9)
-2. Arsenic is then doped. And we obtain N+,N-,P as required.
+2. Arsenic is then doped. And we obtain P+,P- as required.
    ![image](https://github.com/user-attachments/assets/b801d5a3-c9dc-4a59-a673-59140c113d5a)
+3. Boron is then doped. And we obtani the N+,N- as required.
+   ![image](https://github.com/user-attachments/assets/6f16f4ce-073f-41f6-8f24-cfa9be45b084)
+4. After high temperature furnace heating, followed by etching of the oxide, Titanium is deposited using sputtering
+   ![image](https://github.com/user-attachments/assets/3e3bc1c8-6ca1-42c6-84d0-5b7fbf12b59f)
+5. A layer of Silicon is formed above Titanium to get low resistance TiSi. Then the source/drain regions are exposed using a mask as shown. The mask preserves 	 
+   the TiN underneath to later form the local interconnects.
+   ![image](https://github.com/user-attachments/assets/866371d6-f3e1-4282-94fe-07fd4b2ebd9e)
+6. Next, a thick SiO2 layer is deposited and then polished as shown.
+   ![image](https://github.com/user-attachments/assets/fdfad821-0a6a-4219-900d-2005f046e327)
+7. Repeating again with another mask for the gate and source/drain contacts, we deposit Tungsten and once again do CMP to obtain planar surface.
+   ![image](https://github.com/user-attachments/assets/d78b5797-8aff-4530-b730-d1ab6b0f9b4c)
+8. For metal layer, we use a new mask and etch Aluminum where not required.
+   ![image](https://github.com/user-attachments/assets/3a3d476c-6204-4980-9113-6f2bf5dbe1e5)
+9. Repeating for second metal layer, we get two stacks of metal for routing. Then the top of metal is covered with Si3N4 to protect the chip.
+    ![image](https://github.com/user-attachments/assets/9e417316-39a9-404a-83a9-59b9b1dac989)
+10. Finally, we get the complete chip fabricated with all the required interconnects and terminals as shown:
+    ![image](https://github.com/user-attachments/assets/c780729f-2f25-4455-8e3b-733fbe809433)
+
+
 </details>	
 
 
