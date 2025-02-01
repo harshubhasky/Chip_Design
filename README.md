@@ -364,8 +364,60 @@ Using MAGIC tool, we execute some final checks and generate the GDS file. I thin
 
 **#5 Final GDSII generation:** MAGIC creates the required GDS format from the .def and .lef files and it can be sent electronically to foundry and we wait for the chip to be sent back to use from the foundry.
 </details>
-  
+<details>
+<summary>Lab Exercises Overview:</summary>
+	<details>
+		<summary>OpenLane Flow:</summary>
+		We will now go through the process of synthesizing, floorplanning and placement of our design.  And look at the timing reports as well as the 		def file showing the placement of cells. 
+	</details>
+	<details>
+		<summary>Custom Cell Design:</summary>
+		Next, we learn how to make our own custom library cell and include that in the openlane flow.
+		Let’s say we want to build a standard library cell such as an inverter. How do we go about creating a cell ourselves from scratch and how do 		we make the EDA tool use it in its flow ?.
+ 
+**What we need to know ?**
+
+**Custom Cell Step #1 DRC Rules provided by the Foundry:** We need good understanding of what DRC rules are, how to read them and understand them.
+
+**Custom Cell Step #2 MAGIC tool:** We need to know how to use MAGIC layout tool and how to draw the various layers that go to form the components that are present inside logic cells.
+
+**Custom Cell Step #3 Standard Cell Format:** We need to follow certain requirements for the standard cell so that a tool can automate the placement and routing of these cells.
+	i) The height of the cell should be a certain odd multiple of the track dimensions of the process technology so that the tool can have a standardized way of placing and routing.
+	ii) The width of the cell should be a certain even multiple of the track dimensions of the process technology so that the tool can have a standardized way of placing and routing.
+	iii) The input and output pins must be at the intersection of the horizontal and vertical track lines so that metal can be easily routed to those pins of the standard cell during routing stage.
+
+**Custom Cell Step #4 Creating .lib file that contains the timing characterization data:** We need to learn how to characterize a standard layout cell for its timing behavior. This is done by extracting the netlist from the layout and using a circuit simulator like ngspice along with spice model files we get from Foundry to run a circuit simulation and measure the timing delays of the cell. These timing details are then captured in a file called liberty file (.lib extension) which is then used by the EDA tool to calculate overall timing for the entire design.
+
+**Custom Cell Step #5 Make the openLANE tool accept our inverter in its synthesis and placement:** After creating our own standard library cell (inverter), we make openlane accept our inverter into its design and wherever it needs to use an inverter, it will now use our newly designed inverter instead of using the already existing inverter cell from the standard library.
+	</details>
+	<details>
+ 	<summary>STA and Timing Violations Fix:</summary>
+	Finally, we learn how to fix the timing violations by restarting the openlane flow and using a few methods to fix the timing violations.
+Timing analysis shows violations in meeting the required timing for the flops. This needs to be fixed before we proceed with gds generation. To fix timing violations we have the following options:
+		i) Slow down the clock frequency so there is more time for the signals to reach from one point to another. But this reduces the speed of the processor which is not the best option.
+		ii) Ask synthesis tool to optimize timing even at the expense of die size. This can be done through configurations settings where the env variables can be changed to favour delays over die size. But this is also not very optimal as the tool may then use larger size gates even where not really needed. But this is an easier solution as the tool takes care of it.
+		iii) Review the timing report and find out where there is maximal delay and check the logic cell output drive capability and how many gates it is driving and replace weaker logic gates with stronger logic gates to improve specific delay paths. This is an iterative manual process but gives the best results.
+	
+In our design, we will try both option ii) and iii) to fix our timing violations.
+	</details>
+	<details>
+ 	<summary>OpenLane Flow with Custom Cell:</summary>
+We then proceed with floorplanning, placement, clock tree synthesis, routing, final timing analysis, power delivery network generation and parasitic extraction(SPEF) and post extraction timing analysis. 
+
+Our design is then fully ready for fabrication!
+
+</details>
+<details>
+<summary>Lab Exercise:OpenLane Synthesis</summary>
+</details>	
+<details>
+<summary>Lab Exercise:OpenLane Synthesis</summary>
+</details>	
+
+
+
 <br><br>
+
 <span style="font-size: 20px; font-weight: bold;">Implementation Overview:</span>
   
 
