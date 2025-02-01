@@ -1427,6 +1427,9 @@ This concludes the creation of GDS file which can be sent to Foundry for Chip ma
 <p> </p>
 
 ### Acknowledgements
+
+***
+
 ##### Samsung Semiconductor India Research, *sponsor of Chip Design for High School course*
 ##### Kunal Ghosh, *Co-founder, VSD Corp. Pvt. Ltd.*
 ##### Mohammed Fayiz Ferosh, *reference github provided by VSD*
