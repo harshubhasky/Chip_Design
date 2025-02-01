@@ -59,8 +59,10 @@ Macros: They are pure digital logic.
 
 <details>
 <summary>Introduction to "Chip on the inside" </summary>
+
 ## Chip Fabrication Steps:
 ### #1 Creating an Isolation Region
+
 ![image](https://github.com/user-attachments/assets/b26ab5db-74d0-49b9-ac57-141a6e153db1)
 1. First a layer of thin Silicon Oxide is placed. (brown in img)
 2. On top of that Silicon Nitrate is placed. (blue in img)
