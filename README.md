@@ -421,11 +421,26 @@ The openLANE is invoked using the startup commands and the results are shown bel
 <p align="center">
              <img src="https://github.com/user-attachments/assets/e75176ae-bdc0-459c-b7cb-e3e6d9328201" width="650"/>
 </p>
-
-
-
 	<details>
 	<summary>Lab Exercise:OpenLane Synthesis</summary>
+	<p align="center">
+             <img src="https://github.com/user-attachments/assets/d8d18fb6-6117-4d88-9e4a-e4bedd3559e6" width="800"/>
+	</p>
+	<p align="center">
+             <img src="https://github.com/user-attachments/assets/25c6f6e3-1d62-464b-9e6b-1117fc4c27b4" width="800"/>
+	</p>
+	<p align="center">
+             <img src="https://github.com/user-attachments/assets/5e9168ae-4232-4d3d-a549-c3a4ce095eaf" width="800"/>
+	</p>
+	The config.tcl file here summarizes all the parameters that are finally used in the execution. Using this file we know what all parameters are set 	for this run.
+
+Synthesis also runs ABC - what is it ? It does the technology mapping so that the logic gates required to implement the design are picked from what is available in the technology library.
+
+run_synthesis was the command that gave this success output
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/f2b45552-ab03-40af-b1a9-8d33171742a4" width="800"/>
+</p>
 	</details>	
 	<details>
 	<summary>Lab Exercise:OpenLane floorplan</summary>
