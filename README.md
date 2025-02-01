@@ -838,7 +838,10 @@ The flow failed.
 
 Hence we now try running individual commands that are collectively run by run_floorplan tcl file
 <p align="center">
-             <img src="https://github.com/user-attachments/assets/782ac979-a394-418b-8520-01686e9dc4c8"/>
+             <img src="https://github.com/user-attachments/assets/b7ae0cfc-e275-474c-b57d-d919fea6a447"/>
+</p>
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/3ddb9dc8-5cd4-4221-92fb-77604342a5eb"/>
 </p>
 
 
