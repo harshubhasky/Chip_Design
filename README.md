@@ -1269,7 +1269,7 @@ We could have just continued with the next step which is pdn generation. But in 
 <p align="center">
              <img src="https://github.com/user-attachments/assets/88d809b4-c639-4ccb-b17c-f2252ca4057f"/>
 </p>
-
+We now run the run_routing command to start the routing process. This is a compute intensive step that takes several iterations for the routing to get completed. 
 <p align="center">
              <img src="https://github.com/user-attachments/assets/90a08399-c879-4a4f-a513-3ea578c87cc8"/>
 </p>
