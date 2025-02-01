@@ -324,29 +324,29 @@ Inside each of the *results*, *reports*, and *logs* folder, there will be multip
 
 ### Let's understand the directory structure of openPDK
 
-**Folder: openlane_working_dir  → pdks  → - *open_pdks*
-	 	              	          - *skywater-pdk*
-		 	                  - *sky130A*
+*Folder: openlane_working_dir  → pdks  → [*open_pdks*, *skywater-pdk*, *sky130A*]
 		
-These are three folders we find inside the pdks folder. 
+These are the three folders we find inside the pdks folder. 
 
-**skywater-pdk:** Contains Raw Process files. This is provided by SkyWater foundry. This provides the original data 		from Fab as to how to use their technology.
+*open_pdk*: This folder contains scripts that acts as a bridge between what the Foundry provides and what the open EDA tools expect. This takes in the raw PDK data from foundry (skywater-pdk) and converts them to a format that is suitable for open source tools (sky130A) to use.
 
-**sky130A:**  This contains processed information that is more suitable for the opensource EDA tools to use in terms of 	the format and configuration. This is what is loaded into the EDA tools.
+*skywater-pdk*: Contains Raw Process files. This is provided by SkyWater foundry. This provides the original data from Fab as to how to use their technology.
 
-**open_pdk:** This folder contains scripts that acts as a bridge between what the Foundry provides and what the open 		EDA tools expect. This takes in the raw PDK data from foundry (skywater-pdk) and converts them to a format that is 		suitable for open source tools (sky130A) to use.
+*sky130A*: This contains processed information that is more suitable for the opensource EDA tools to use in terms of the format and configuration. This is what is loaded into the EDA tools.
 
 </details>
 
 <details>
 <summary>𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜 𝚝𝚘 𝚂𝚝𝚊𝚛𝚝 𝙾𝚙𝚎𝚗𝙻𝙰𝙽𝙴 𝙴𝙳𝙰 𝚃𝚘𝚘𝚕</summary>
-#docker
 	
+```python
+#docker
 $./flow.tcl -interactive
 
 %package require openlane 0.9
 
-%prep -design picorv32a
+%prep -design picorv32a 
+```
 
 Above commands will be used every time we setup the openLANE EDA tool.
 </details>
@@ -356,19 +356,19 @@ Above commands will be used every time we setup the openLANE EDA tool.
 
 The major steps we follow to take in the RTL and PDK information and generate a GDS file for Foundry fabrication are executed using the following sequence of commands.
 
-**% run_synthesis**
+1. **% run_synthesis**
 This command executes yosys, the synthesis tool along with ABC, the technology mapping tool to generate a verilog netlist that contains the gate level description of circuit that is equivalent to the RTL we provided. 
 
-**Input:** RTL and PDK
+	*Input:* RTL and PDK
 
-**Output:** verilog netlist (gate level details and their connectivity) that is equivalent to our behavior RTL description of the logic.
+	*Output:* verilog netlist (gate level details and their connectivity) that is equivalent to our behavior RTL description of the logic.
 
-**Reports:** Die Area estimate, list of cells used, Timing information (and any violations present)
+	*Reports:* Die Area estimate, list of cells used, Timing information (and any violations present)
 
-*An important question to address : What do we do if there are timing violations ?
+	*An important question to address: What do we do if there are timing violations?
 	→ We will later see how we address the timing violations. We will now focus on the main flow of the tool but let us keep this in mind so we can revisit this later.*
 
-**% run_floorplan**
+2. **% run_floorplan**
 This step takes in our verilog netlist and also any macros used in our design (such as Memory, IP, macros etc) and places the macros along with decoupling capacitors, the input and output pins of our design and also dumps all the cells used in our verilog design. 
 
 **Input:** Verilog netlist, the library of standard cells 
