@@ -154,7 +154,9 @@ It is the detailed information about the position, dimension and the connections
   <img src="https://github.com/user-attachments/assets/dbd8c700-7852-4219-9428-b190df072dbb" width="700" height="550"/>
 </p>
 
-<sub>Example of GDS</sub>
+<p align="center">
+	<sub>Example of GDS</sub>
+</p>
 
 What is PDK(Process Design Kit)?
 It is the interface between the foundry and the designers.
@@ -171,7 +173,9 @@ EDA is a set of sowtware tools that helps automate the design process of a chip.
   <img src="https://github.com/user-attachments/assets/2cb8a1d2-9cb6-4261-a0a7-fe799515aece" width="700" height="500"/>
 </p>
 
-<sub>Various Tasks Perfomed by EDA Tools</sub>
+<p align="center">
+  <sub>Various Tasks Perfomed by EDA Tools</sub>
+</p>
 </details>
 
 <details>
