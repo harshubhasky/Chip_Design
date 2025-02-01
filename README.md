@@ -1097,7 +1097,7 @@ Copy current netlist before committing the ECO changes to the verilog file
 
 ## How is a Chip Made?
 
-#### #1 creating an Isolation Region
+### #1 Creating an Isolation Region
 ![image](https://github.com/user-attachments/assets/b26ab5db-74d0-49b9-ac57-141a6e153db1)
 1. First a layer of thin Silicon Oxide is placed. (brown in img)
 2. On top of that Silicon Nitrate is placed. (blue in img)
@@ -1112,7 +1112,7 @@ Copy current netlist before committing the ECO changes to the verilog file
 8. The Silicon Nitrate is removed and we get a surface such that transistors are not in direct contact with each other. We have created an electrical isolation.
    ![image](https://github.com/user-attachments/assets/d670d272-45e4-485c-b8dc-2a9af0b8dea8)
 
-#### #2 N-Well and P-Well Formation
+### #2 N-Well and P-Well Formation
 1. The same procedure is followed to protect the left side.
   ![image](https://github.com/user-attachments/assets/d735c796-a514-49ac-89f4-3207886bbda9)
 2. After the Photoresist has been removed on the right, atoms of Boron are hit with high force to diffuse into the P-Substrate. A P-well is formed.
@@ -1122,7 +1122,7 @@ Copy current netlist before committing the ECO changes to the verilog file
 4. The entire Substrate in heated in a high temperature furnace for a long time. This will drive in the the atoms into the P-Subrates, forming clear visible wells. This process is called *twin tub process*.
    ![image](https://github.com/user-attachments/assets/9c1c13e6-d5cb-4dee-ac43-9315eb39b9b4)
 
-#### #3 Formation of Gate Terminal
+### #3 Formation of Gate Terminal
 1. Just like before, we hit Boron atoms on the right side, but this time at a low energy so that is only lies on the surface.
    ![image](https://github.com/user-attachments/assets/2b2493a5-c5d6-405b-a00d-2d26602097f4)
 2. The same is done on the left side. We can either use Phosphorus or Arsenic atoms. [Arsenic atoms will not penertate deep into the Substrate]
