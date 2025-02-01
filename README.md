@@ -958,6 +958,19 @@ Trying new configuration settings
 </p>
 
 
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/d41ef052-1014-4fe7-9c36-ea478681505e"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/6f728dfb-13e0-4554-8410-61970bd663db"/>
+</p>
+
+Copy current netlist before committing the ECO changes to the verilog file
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/be9ef3c3-9e21-4d67-8b8b-57f1fbcd8c95"/>
+</p>
+
 
 
 
