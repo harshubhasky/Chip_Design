@@ -235,9 +235,12 @@ Note: ASIC → Application Specific IC
 10. GDS generation for fabrication
 </details>
 
+<details>
+<summary>Implementation</summary>
 <br><br>
-<span style="font-size: 20px; font-weight: bold;">Implementation:</span>
-
+<span style="font-size: 20px; font-weight: bold;">Implementation Overview:</span>
+  
+</details>
 <p align="center">
              <img src="https://github.com/user-attachments/assets/e75176ae-bdc0-459c-b7cb-e3e6d9328201" width="650"/>
 </p>
