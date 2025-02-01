@@ -310,27 +310,23 @@ Note: ASIC → Application Specific IC
 <details>
 <summary>𝙾𝚙𝚎𝚗𝙻𝙰𝙽𝙴 𝚊𝚗𝚍 𝙿𝙳𝙺 𝙳𝚒𝚛𝚎𝚌𝚝𝚘𝚛𝚢 𝚂𝚝𝚛𝚞𝚌𝚝𝚞𝚛𝚎</summary>
 
-**Understanding the directory structure of openLANE**
+### Now let's understand the directory structure of openLANE.
 	
-**Folder: openlane → configuration**
-  	: All settings related to how openlane will execute each of its tools within it are setup in this folder in the form of tcl scripts.
+   → *Folder: openlane → configuration* - All settings related to how openlane will execute each of its tools within it are setup in this folder in the form of tcl scripts.
   
-**Folder: openlane → designs → picorv32a**
-  	: This is our design folder. Anything related to the design is stored in this folder
+   → *Folder: openlane → designs → picorv32a* - This is our design folder. Anything related to the design is stored in this folder
   
-**Folder: openlane → designs → picorv32a  → src**
-	: This contains the RTL code that design engineers create (Tool: Verilog)
+   → *Folder: openlane → designs → picorv32a  → src* - This contains the RTL code that design engineers create (Tool: Verilog)
  
-**Folder: openlane → designs → picorv32a  → runs**
-	: This contains the results, reports and logs folder of the EDA tool output at various steps. Everytime we start openlane, a new run folder is created using date time info. This helps to keep history of the EDA outputs.
+   → *Folder: openlane → designs → picorv32a  → runs* - This contains the *results*, *reports*, and *logs* folder of the EDA tool output at various steps. Everytime we start 								openlane, a new run folder is created using date time info. This helps to keep history of the EDA outputs.
 
-Inside each of the **results**, **reports** and **logs** folder, there will be multiple sub folders for each major activity such as **synthesis**, **floorplan**, **placement**,**routing** etc.
+Inside each of the *results*, *reports*, and *logs* folder, there will be multiple sub folders for each major activity such as *synthesis*, *floorplan*, *placement*,*routing* etc.
 
-**Understanding the directory structure of openPDK**
+### Let's understand the directory structure of openPDK
 
-**Folder: openlane_working_dir  → pdks  → open_pdks**
-	 	              	        **→ skywater-pdk**
-		 	                **→ sky130A**
+**Folder: openlane_working_dir  → pdks  → - *open_pdks*
+	 	              	          - *skywater-pdk*
+		 	                  - *sky130A*
 		
 These are three folders we find inside the pdks folder. 
 
