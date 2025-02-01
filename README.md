@@ -718,6 +718,24 @@ Width of standard cell = 1.38um = 3*0.46um
 
 
 
+## How is a Chip Made?
+
+![image](https://github.com/user-attachments/assets/b26ab5db-74d0-49b9-ac57-141a6e153db1)
+
+1. First a layer of thin Silicon Oxide is placed. (brown in img)
+2. On top of that Silicon Nitrate is placed. (blue in img)
+3. A layer of Photoresist is placed. (white in img)
+4. A mask is placed over the places we want to preserve/protect. (red in img)
+5. UV light is shone on the entire thing to remove the Photoresist in the parts that are not protected by the mask.
+   ![image](https://github.com/user-attachments/assets/16d7b912-3e93-4f0c-be9a-dc0c29f70340)
+6. We remove the masks and then etch off the Silicon Nitrate. It will be etched off in the places where the Photoresist is not present.
+  ![image](https://github.com/user-attachments/assets/c63eeae9-fb8c-43d8-81fa-866073feebc7)
+7. The Photoresist is removed. Then we place the entire thing in an oxidation furnace. The parts where the Silicon Nitrate is not present will grow. This process is called *LOCOS[Local Oxidation of Silicon]*. The places where the bulge growth starts from are known as the *Bird's Beak*.
+   ![image](https://github.com/user-attachments/assets/ba2a61a5-ecad-4cd5-bd1c-6f6d60bf9430)
+8. The Silicon Nitrate is removed and we get a surface such that transistors are not in direct contact with each other. We have created an electrical isolation.
+   ![image](https://github.com/user-attachments/assets/d670d272-45e4-485c-b8dc-2a9af0b8dea8)
+
+
 
 
 
