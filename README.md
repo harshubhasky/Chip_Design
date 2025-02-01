@@ -411,6 +411,19 @@ Our design is then fully ready for fabrication!
 ## Course Implementation Results
 <details>
 <summary>OpenLane Flow Results until placement</summary>	
+The verilog code of picorv32a design that we are going to implement in this course is shown below. This is a behavioral RTL code of the RISC-V processor.
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/e84a0593-9b9e-4d96-aca5-0991c8688f2b" width="650"/>
+</p>
+
+The openLANE is invoked using the startup commands and the results are shown below.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/e75176ae-bdc0-459c-b7cb-e3e6d9328201" width="650"/>
+</p>
+
+
+
 	<details>
 	<summary>Lab Exercise:OpenLane Synthesis</summary>
 	</details>	
@@ -448,18 +461,12 @@ Our design is then fully ready for fabrication!
 
 <br><br>
 
-<span style="font-size: 20px; font-weight: bold;">Implementation Overview:</span>
   
 
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/e75176ae-bdc0-459c-b7cb-e3e6d9328201" width="650"/>
-</p>
 
 
 
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/e84a0593-9b9e-4d96-aca5-0991c8688f2b" width="650"/>
-</p>
+
 
 
 <p align="center">
