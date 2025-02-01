@@ -58,7 +58,7 @@ Macros: They are pure digital logic.
 
 ## RISC-V Instruction Set Architecture(ISA)
 <details>
-<summary>Click to Expand</summary>
+<summary>Theory Part 1</summary>
 This is a language of computers and a way we talk to computers.
 <p align="center">
   <img src="https://github.com/user-attachments/assets/5d3348a7-c7dc-4ffe-a00f-0a71a071be64" width="700" height="400"/>
@@ -107,6 +107,8 @@ EDA is a set of sowtware tools that helps automate the design process of a chip.
 </details>
 
 ## What is the connection between hardware and software?
+<details>
+<summary>Theory Part 2</summary>
 Now let's understand how the computer, which works only based on 1s and 0s, understand the various types of data we feed into the applications present in our computers.
 For this to happen, the data present in the various applications we use in our computer has to get conververted to binary bits. This is done by the *system software*. The system software comprises of the OS(Operating System), compiler, assembler.
 The overall sequence goes like this:
@@ -165,9 +167,11 @@ Steps followed to create the chip:
    vii) Sign off: It consists of DRC(Design Rules Check), LVS(Layout Vs Schematic) and STA(Atatic Timing Analyisis).
    
 5. GDS is generated and sent to a foundry where the chip is fabricated.
-
+</details>
+  
 ## OpenLANE
-
+<details>
+<summary>Theory Part 3</summary>
 Main goal: To produce a clean GDS with no human intervention (no-human-in-the-loop)
 Here clean means: 1. No LVS Violations
                   2. No DRC Violations
@@ -182,9 +186,11 @@ It has two modes of opperation:
 It has a very nice feature called *Design Space Exploration*. It is used to find the best set of flow configurations.
 
 OpenLANE also has a large number of design examples - it has 43 designs with thier best configurations as of now.
-
+</details>
+  
 ## OpenLANE ASIC FLow
-
+<details>
+<summary>Theory Part 4</summary>
 Note: ASIC → Application Specific IC
  <p align="center">
              <img src="https://github.com/user-attachments/assets/3367bf33-a3e0-43e7-9bfc-590cf1a2fa25" width="700" height="450"/>
@@ -227,6 +233,7 @@ Note: ASIC → Application Specific IC
 9. Post-Layout RC Extraction and STA and Physical Verification [Tool → OpenSTA, magic, netgen]
    
 10. GDS generation for fabrication
+</details>
 
 <br><br>
 <span style="font-size: 20px; font-weight: bold;">Implementation:</span>
