@@ -235,7 +235,7 @@ Note: ASIC → Application Specific IC
 10. GDS generation for fabrication
 </details>
 
-<span style="color: red;">## Course Implementation Overview</span>
+##<span style="color: red;"> Course Implementation Overview</span>
 <details>
 <summary>OpenLANE and PDK Directory Structure</summary>
 
