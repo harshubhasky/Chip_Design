@@ -407,15 +407,51 @@ We then proceed with floorplanning, placement, clock tree synthesis, routing, fi
 Our design is then fully ready for fabrication!
 	</details>
 </details>
+
+## Course Implementation Results
 <details>
-<summary>Lab Exercise:OpenLane Synthesis</summary>
-</details>	
+<summary>OpenLane Flow Results</summary>	
+	<details>
+	<summary>Lab Exercise:OpenLane Synthesis</summary>
+	</details>	
+	<details>
+	<summary>Lab Exercise:OpenLane floorplan</summary>
+	</details>	
+	<details>
+	<summary>Lab Exercise:OpenLane placement</summary>
+	</details>	
+</details>
 <details>
-<summary>Lab Exercise:OpenLane floorplan</summary>
-</details>	
+<summary>Custom Cell Design Results</summary>	
+	<details>
+	<summary>Lab Exercise:Custom Cell Design DRC Experiments</summary>
+	</details>	
+	<details>
+	<summary>Lab Exercise:Custom Cell Design Magic Layout</summary>
+	</details>	
+	<details>
+	<summary>Lab Exercise:Custom Cell Design Standard Cell Format Results</summary>
+	</details>	
+</details>
 <details>
-<summary>Lab Exercise:OpenLane placement</summary>
-</details>	
+<summary>Custom Cell Design Results</summary>	
+	<details>
+	<summary>Lab Exercise:Custom Cell Design DRC Experiments</summary>
+	</details>	
+	<details>
+	<summary>Lab Exercise:Custom Cell Design Magic Layout</summary>
+	</details>	
+	<details>
+	<summary>Lab Exercise:Custom Cell Design Standard Cell Format Results</summary>
+	</details>	
+	<details>
+	<summary>Lab Exercise:Custom Cell Design Lib file creation</summary>
+	</details>	
+	<details>
+	<summary>Lab Exercise:Custom Cell Design integration into openLANE</summary>
+	</details>	
+</details>
+
 
 
 
