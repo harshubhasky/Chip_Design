@@ -1010,7 +1010,7 @@ The following highlighted lines are added to the design config.tcl file
 </details>	
 </details>
 <details>
-<summary>STA and Timing Violations Fix and GDS generation with custom library cell</summary>	
+<summary>𝚂𝚃𝙰 𝚊𝚗𝚍 𝚃𝚒𝚖𝚒𝚗𝚐 𝚅𝚒𝚘𝚕𝚊𝚝𝚒𝚘𝚗𝚜 𝙵𝚒𝚡 𝚊𝚗𝚍 𝙶𝙳𝚂 𝙶𝚎𝚗𝚎𝚛𝚊𝚝𝚒𝚘𝚗 𝚠𝚒𝚝𝚑 𝙲𝚞𝚜𝚝𝚘𝚖 𝙻𝚒𝚋𝚛𝚊𝚛𝚢 𝙲𝚎𝚕𝚕</summary>	
 Starting openlane all over from docker setup.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/e6486fbd-d37b-44fe-9d05-9edfaaead14d"/>
