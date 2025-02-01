@@ -124,9 +124,9 @@ Macros: They are pure digital logic.
 </details>	
 
 
-## RISC-V Instruction Set Architecture(ISA)
+## RISC-V and OpenLANE
 <details>
-<summary>Theory Part 1</summary>
+<summary>𝚁𝙸𝚂𝙲-𝚅 𝙸𝚗𝚜𝚝𝚛𝚞𝚌𝚝𝚒𝚘𝚗 𝚂𝚎𝚝 𝙰𝚛𝚌𝚑𝚒𝚝𝚎𝚌𝚝𝚞𝚛𝚎(𝙸𝚂𝙰)</summary>
 This is a language of computers and a way we talk to computers.
 <p align="center">
   <img src="https://github.com/user-attachments/assets/5d3348a7-c7dc-4ffe-a00f-0a71a071be64" width="700" height="400"/>
@@ -174,9 +174,8 @@ EDA is a set of sowtware tools that helps automate the design process of a chip.
 <sub>Various Tasks Perfomed by EDA Tools</sub>
 </details>
 
-## What is the connection between hardware and software?
 <details>
-<summary>Theory Part 2</summary>
+<summary>𝚆𝚑𝚊𝚝 𝚒𝚜 𝚝𝚑𝚎 𝚌𝚘𝚗𝚗𝚎𝚌𝚝𝚒𝚘𝚗 𝚋𝚎𝚝𝚠𝚎𝚎𝚗 𝚑𝚊𝚛𝚍𝚠𝚊𝚛𝚎 𝚊𝚗𝚍 𝚜𝚘𝚏𝚝𝚠𝚊𝚛𝚎?</summary>
 Now let's understand how the computer, which works only based on 1s and 0s, understand the various types of data we feed into the applications present in our computers.
 For this to happen, the data present in the various applications we use in our computer has to get conververted to binary bits. This is done by the *system software*. The system software comprises of the OS(Operating System), compiler, assembler.
 The overall sequence goes like this:
@@ -237,9 +236,9 @@ Steps followed to create the chip:
 5. GDS is generated and sent to a foundry where the chip is fabricated.
 </details>
   
-## OpenLANE
+
 <details>
-<summary>Theory Part 3</summary>
+<summary>𝙾𝚙𝚎𝚗𝙻𝙰𝙽𝙴</summary>
 Main goal: To produce a clean GDS with no human intervention (no-human-in-the-loop)
 Here clean means: 1. No LVS Violations
                   2. No DRC Violations
@@ -256,9 +255,9 @@ It has a very nice feature called *Design Space Exploration*. It is used to find
 OpenLANE also has a large number of design examples - it has 43 designs with thier best configurations as of now.
 </details>
   
-## OpenLANE ASIC FLow
+
 <details>
-<summary>Theory Part 4</summary>
+<summary>𝙾𝚙𝚎𝚗𝙻𝙰𝙽𝙴 𝙰𝚂𝙸𝙲 𝙵𝙻𝚘𝚠</summary>
 Note: ASIC → Application Specific IC
  <p align="center">
              <img src="https://github.com/user-attachments/assets/3367bf33-a3e0-43e7-9bfc-590cf1a2fa25" width="700" height="450"/>
