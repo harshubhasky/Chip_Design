@@ -241,12 +241,10 @@ Note: ASIC → Application Specific IC
 Understanding the directory structure of openLANE
 	
 Folder: openlane → configuration 
-
-  : All settings related to how openlane will execute each of its tools within it are setup in this folder in the form of tcl scripts.
+  	: All settings related to how openlane will execute each of its tools within it are setup in this folder in the form of tcl scripts.
   
 Folder: openlane → designs → picorv32a  
-
-  : This is our design folder. Anything related to the design is stored in this folder
+  	: This is our design folder. Anything related to the design is stored in this folder
   
 Folder: openlane → designs → picorv32a  → src
 	: This contains the RTL code that design engineers create (Tool: Verilog)
@@ -258,20 +256,20 @@ Inside each of the results, reports and logs folder, there will be multiple sub 
 
 Understanding the directory structure of openPDK
 
-Folder: openlane_working_dir  → pdks → open_pdks
-		              → skywater-pdk
-		              → sky130A
+Folder: openlane_working_dir  → pdks  → open_pdks
+	 	              	      → skywater-pdk
+		 	              → sky130A
 		
 These are three folders we find inside the pdks folder. 
-
-skywater-pdk : Contains Raw Process files. This is provided by SkyWater foundry. This provides the original data from Fab as to how to use their technology.
-
-sky130A:  This contains processed information that is more suitable for the opensource EDA tools to use in terms of the format and configuration. This is what is loaded into the EDA tools.
-
-open_pdk: This folder contains scripts that acts as a bridge between what the Foundry provides and what the open EDA tools expect. This takes in the raw PDK data from foundry (skywater-pdk) and converts them to a format that is suitable for open source tools (sky130A) to use.
-
-
-  
+<p>
+ 	skywater-pdk : Contains Raw Process files. This is provided by SkyWater foundry. This provides the original data from 		Fab as to how to use their technology.
+</p>	
+<p>
+ 	sky130A:  This contains processed information that is more suitable for the opensource EDA tools to use in terms of the 	format and configuration. This is what is loaded into the EDA tools.
+</p>
+<p>
+ 	open_pdk: This folder contains scripts that acts as a bridge between what the Foundry provides and what the open EDA 		tools expect. This takes in the raw PDK data from foundry (skywater-pdk) and converts them to a format that is suitable 	for open source tools (sky130A) to use.
+ </p>
   
 <br><br>
 <span style="font-size: 20px; font-weight: bold;">Implementation Overview:</span>
