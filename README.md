@@ -410,7 +410,7 @@ Our design is then fully ready for fabrication!
 
 ## Course Implementation Results
 <details>
-<summary>OpenLane Flow Results</summary>	
+<summary>OpenLane Flow Results until placement</summary>	
 	<details>
 	<summary>Lab Exercise:OpenLane Synthesis</summary>
 	</details>	
@@ -435,6 +435,10 @@ Our design is then fully ready for fabrication!
 </details>
 <details>
 <summary>STA and Timing Violations Fix Results</summary>	
+	
+</details>
+<details>
+<summary>Comple OpenLane Flow Results using Custom Library Cell </summary>	
 	
 </details>
 
