@@ -560,6 +560,7 @@ We have now successfully completed the openLANE execution flow until placement. 
 <details>
 <summary>Custom Cell Design Results</summary>	
 	For this exercise, we clone a github repository as shown below.
+
 ```python
 # cd to openlane
 cd Desktop/work/tools/openlane_working_dir/openlane
