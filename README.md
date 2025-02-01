@@ -486,39 +486,21 @@ run_synthesis was the command that gave this success output
 
 
 
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/ac7064b2-ed95-44f6-b187-fa66526f11b3" width="600"/>
-</p>
 
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/e098193d-04ae-46af-8531-c8a9c84efd4f" width="300"/>
-</p>
-
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/c462e306-39d5-466f-a6cf-58f38ac097ed" width="800"/>
-</p>
-
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/a38ebc64-4eca-4a72-be09-9e957487a883" width="800"/>
-</p>
-
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/c57867b5-dc25-45d2-b7d3-1aebcf743d44" width="800"/>
-</p>
 
 <p align="center">
              <img src="https://github.com/user-attachments/assets/915736c6-82d4-41cf-b5a3-9baf85b065f0" width="500"/>
 </p>
 Flop ratio = 1613/14876 =10.84%
 
-
+Now we open the synthesized netlist (a verilog file ). As expected it shows instances of logic gates along with connectivity using wires.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/2a03431d-1b89-45b4-9971-da7316ae2034" width="800"/>
 </p>
 <p align="center">
              <img src="https://github.com/user-attachments/assets/7dcf6d3c-05f4-4b46-aa1c-2b93ae7af128" width="400"/>
 </p>
-
+We now open the synthesis timing report file and observe that there are timing violations reported.
 
 <p align="center">
              <img src="https://github.com/user-attachments/assets/96d30830-5321-4111-9a70-f59c8cf01373" width="800"/>
@@ -529,9 +511,12 @@ Flop ratio = 1613/14876 =10.84%
 </p>
 Slack violated
 
+Next, I carry out a small experiment to see if the configuration tcl file can be edited to change the Synthesis Strategy. The image below shows how the synthesis.tcl file inside configurations folder can be edited to change the synthesize strategy from "AREA 0" to "DELAY 0".
 <p align="center">
              <img src="https://github.com/user-attachments/assets/1b25056a-b05f-4952-9530-6c7d29162591"/>
 </p>
+
+We then check if this change in the configuration is really accepted by the openLANE flow. This is done by restarting the openLANE tool (using the starting openLANE set of commands to prepare the design) and then open the config.tcl present inside the run folder to see if our changes have taken effect.
 
 <p align="center">
              <img src="https://github.com/user-attachments/assets/261ae0d8-d6a1-49bd-9899-1b14ca726258"/>
@@ -540,20 +525,9 @@ Slack violated
 <p align="center">
              <img src="https://github.com/user-attachments/assets/6cd8f7ab-bf42-44ee-ae9f-6cdd31374e1f"/>
 </p>
-After updating configuration to use 
-SYNTH_STRATEGY as DELAY 0, we can check in the config.tcl whether it was correctly setup for processing.
 
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/06d80fc0-e309-464b-93d9-7e5081b2b461"/>
-</p>
-This config.tcl has more precedence than the configuration folder settings…
+This however did not solve the slack violation completely. We will later see how to completely fix the slack violations.
 
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/f878c58d-1b25-4640-a303-cc4118b37eca"/>
-</p>
-
-
-**DAY 2:**
 
 <p align="center">
              <img src="https://github.com/user-attachments/assets/0371b203-b668-49e9-b851-e47d6c56ae21"/>
@@ -1338,7 +1312,25 @@ The .SPEF file is also generated automatically. So we proceed with final timing 
              <img src="https://github.com/user-attachments/assets/4f67171d-6d50-4cea-b940-e5969b2573fc"/>
 </p>
 
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/ac7064b2-ed95-44f6-b187-fa66526f11b3" width="600"/>
+</p>
 
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/e098193d-04ae-46af-8531-c8a9c84efd4f" width="300"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/c462e306-39d5-466f-a6cf-58f38ac097ed" width="800"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/a38ebc64-4eca-4a72-be09-9e957487a883" width="800"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/c57867b5-dc25-45d2-b7d3-1aebcf743d44" width="800"/>
+</p>
 
 
 ## Chip Fabrication Steps:
