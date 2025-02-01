@@ -262,16 +262,15 @@ Inside each of the **results**, **reports** and **logs** folder, there will be m
 		 	                **→ sky130A**
 		
 These are three folders we find inside the pdks folder. 
-<p>
- 	**skywater-pdk:** Contains Raw Process files. This is provided by SkyWater foundry. This provides the original data 		from Fab as to how to use their technology.
-</p>	
-<p>
- 	**sky130A:**  This contains processed information that is more suitable for the opensource EDA tools to use in terms of 	the format and configuration. This is what is loaded into the EDA tools.
-</p>
-<p>
- 	**open_pdk:** This folder contains scripts that acts as a bridge between what the Foundry provides and what the open 		EDA tools expect. This takes in the raw PDK data from foundry (skywater-pdk) and converts them to a format that is 		suitable for open source tools (sky130A) to use.
- </p>
 
+**skywater-pdk:** Contains Raw Process files. This is provided by SkyWater foundry. This provides the original data 		from Fab as to how to use their technology.
+
+**sky130A:**  This contains processed information that is more suitable for the opensource EDA tools to use in terms of 	the format and configuration. This is what is loaded into the EDA tools.
+
+**open_pdk:** This folder contains scripts that acts as a bridge between what the Foundry provides and what the open 		EDA tools expect. This takes in the raw PDK data from foundry (skywater-pdk) and converts them to a format that is 		suitable for open source tools (sky130A) to use.
+
+</details>
+<details>
 **Commands to start openlane EDA tool**
 #docker
 $./flow.tcl -interactive
@@ -351,12 +350,12 @@ Using MAGIC tool, we execute some final checks and generate the GDS file. I thin
 **#3 DRC:** Since the library cells are locally created by engineers, they may have some Design rule violations. Also, during routing phase, the tool might have violated some design rules. So a final DRC check is run to ensure all design rules suggested by Foundry are still met in our final design.
 **#4 Antenna Diode check:** During fabrication, the metal layers are fabricated layer by layer. So if there is a long metal route, the metal will be hanging on one end as the next metal layer is yet to be fabricated. During this time, any stray electric signals can be picked by the long metal trace acting as antenna and that could potentially harm the underlying components connected to that metal trace. To protect the circuits, antenna diodes are added which acts as an alternative safe path for the stray charges picked up by the metal to reach ground or supply terminals. These are verified at this final stage and any necessary changes are automatically done by the EDA tool to protect circuits during fabrication steps.
 **#5 Final GDSII generation:** MAGIC creates the required GDS format from the .def and .lef files and it can be sent electronically to foundry and we wait for the chip to be sent back to use from the foundry.
-
+</details>
   
 <br><br>
 <span style="font-size: 20px; font-weight: bold;">Implementation Overview:</span>
   
-</details>
+
 <p align="center">
              <img src="https://github.com/user-attachments/assets/e75176ae-bdc0-459c-b7cb-e3e6d9328201" width="650"/>
 </p>
