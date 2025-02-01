@@ -1093,10 +1093,12 @@ Copy current netlist before committing the ECO changes to the verilog file
 
 
 
+
+
 ## How is a Chip Made?
 
+#### #1 creating an Isolation Region
 ![image](https://github.com/user-attachments/assets/b26ab5db-74d0-49b9-ac57-141a6e153db1)
-
 1. First a layer of thin Silicon Oxide is placed. (brown in img)
 2. On top of that Silicon Nitrate is placed. (blue in img)
 3. A layer of Photoresist is placed. (white in img)
@@ -1110,6 +1112,31 @@ Copy current netlist before committing the ECO changes to the verilog file
 8. The Silicon Nitrate is removed and we get a surface such that transistors are not in direct contact with each other. We have created an electrical isolation.
    ![image](https://github.com/user-attachments/assets/d670d272-45e4-485c-b8dc-2a9af0b8dea8)
 
+#### #2 N-Well and P-Well Formation
+1. The same procedure is followed to protect the left side.
+  ![image](https://github.com/user-attachments/assets/d735c796-a514-49ac-89f4-3207886bbda9)
+2. After the Photoresist has been removed on the right, atoms of Boron are hit with high force to diffuse into the P-Substrate. A P-well is formed.
+   ![image](https://github.com/user-attachments/assets/74864098-f67f-4bb0-a2ca-9b16cdb3fe23)
+3. Similarly atoms of Phosphorus are hit with high force to diffuse into the P-Substrate. A N-well is formed.
+  ![image](https://github.com/user-attachments/assets/2b552100-4ace-438f-a5c8-a12c43abc098)
+4. The entire Substrate in heated in a high temperature furnace for a long time. This will drive in the the atoms into the P-Subrates, forming clear visible wells. This process is called *twin tub process*.
+   ![image](https://github.com/user-attachments/assets/9c1c13e6-d5cb-4dee-ac43-9315eb39b9b4)
+
+#### #3 Formation of Gate Terminal
+1. Just like before, we hit Boron atoms on the right side, but this time at a low energy so that is only lies on the surface.
+   ![image](https://github.com/user-attachments/assets/2b2493a5-c5d6-405b-a00d-2d26602097f4)
+2. The same is done on the left side. We can either use Phosphorus or Arsenic atoms. [Arsenic atoms will not penertate deep into the Substrate]
+   ![image](https://github.com/user-attachments/assets/1423c48f-f9a3-4412-a024-25d3ad620bcf)
+3. But when this doping is done, damages occur in the Slicone Oxide layer. To fix this, the damaged oxide is stripped off using dilute hydrofluric acid.
+  ![image](https://github.com/user-attachments/assets/dedef78c-1680-4059-9aaf-03f46f8d60e1)
+  And then the oxide layer is re-grown again.
+  ![image](https://github.com/user-attachments/assets/f4a3738d-ef6c-4081-bfc8-5e8c7d557dd4)
+4. We grow a thick polysilicon layer on it. The gate area is supossed to be of low ressistance, so we top it with N-type impurities.
+   ![image](https://github.com/user-attachments/assets/7cc0dd89-ee58-4e7c-9cac-a609a94cd4fb)
+5. We make the following structure.
+   ![image](https://github.com/user-attachments/assets/19a0f089-d3e5-4077-b52e-107e530ecc2a)
+6. Only the area under the Photoresist remains and we obtain our gates.
+   ![image](https://github.com/user-attachments/assets/60d67641-a640-4b2a-ae31-f0a062870eb9)
 
 
 
