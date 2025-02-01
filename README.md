@@ -1392,7 +1392,7 @@ However, running the command %run_magic gave an error that the variable DIE_AREA
 Searching for this mag_gds.tcl it is found to be in the scripts/magic/ folder within openlane.
 This file contents are as shown below.
 <p align="center">
-![image](https://github.com/user-attachments/assets/b86570c6-5cf3-4b80-b748-396f875c7008)
+<img src="https://github.com/user-attachments/assets/b86570c6-5cf3-4b80-b748-396f875c7008"/>
 </p>
 Since the env variable MAGIC_ZEROIZE_ORIGIN is not defined, the program enters the else section and finds the DIE_AREA not defined. Lets define the variable MAGIC_ZEROIZE_ORIGIN using the command
 % set ::env(MAGIC_ZEROIZE_ORIGIN) 1
@@ -1403,10 +1403,10 @@ Now rerun the command
 
 The gds file is now generated successfully.
 <p align="center">
-![image](https://github.com/user-attachments/assets/ba71ced4-a4c9-4fec-8716-a22789956c55)
+<img src="https://github.com/user-attachments/assets/ba71ced4-a4c9-4fec-8716-a22789956c55"/>
 </p>
 <p align="center">
-![image](https://github.com/user-attachments/assets/c73a03b3-87b4-4fa7-8baa-290685a9bf06)
+<img src="https://github.com/user-attachments/assets/c73a03b3-87b4-4fa7-8baa-290685a9bf06"/>
 </p>
 This concludes the creation of gds file which can be sent to Foundry for Chip manufacturing.
 </details>
