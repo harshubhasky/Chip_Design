@@ -204,6 +204,9 @@ Steps followed to create the chip:
 2. Foundry provides details (in the form of a PDK) about the component capabilites used to build the chip.
 3. RTL and PDK are given to EDA tools.
    The steps performed by the EDA are:
+   
+<p></p>
+   
    i) Synthesis of RTL into a netlist of gates.
         <p align="center">
           <img src="https://github.com/user-attachments/assets/ada98132-5232-4d72-b2e4-ff263b08177f" width="750" height="300"/>
@@ -440,39 +443,46 @@ Using MAGIC tool, we execute some final checks and generate the GDS file. We are
 	<details>
 		<summary>OpenLane Flow:</summary>
 		We will now go through the process of synthesizing, floorplanning and placement of our design and look at the timing reports as well as the def file showing the placement of cells. 
-	</details>
-	<details>
-		<summary>Custom Cell Design:</summary>
-		Next, we learn how to make our own custom library cell and include that in the openlane flow.
-		Let’s say we want to build a standard library cell such as an inverter. How do we go about creating a cell ourselves from scratch and how do we make the EDA tool use it in its flow?
- 
-**What we need to know?**
-
-**Custom Cell Step #1 DRC Rules provided by the Foundry:** We need good understanding of what DRC rules are, how to read them and understand them.
-
-**Custom Cell Step #2 MAGIC tool:** We need to know how to use MAGIC layout tool and how to draw the various layers that go to form the components that are present inside logic cells.
-
-**Custom Cell Step #3 Standard Cell Format:** We need to follow certain requirements for the standard cell so that a tool can automate the placement and routing of these cells.
-	i) The height of the cell should be a certain odd multiple of the track dimensions of the process technology so that the tool can have a standardized way of placing and routing.
-	ii) The width of the cell should be a certain even multiple of the track dimensions of the process technology so that the tool can have a standardized way of placing and routing.
-	iii) The input and output pins must be at the intersection of the horizontal and vertical track lines so that metal can be easily routed to those pins of the standard cell during routing stage.
-
-**Custom Cell Step #4 Creating *.lib* file that contains the timing characterization data:** We need to learn how to characterize a standard layout cell for its timing behavior. This is done by extracting the netlist from the layout and using a circuit simulator like ngspice along with spice model files we get from Foundry to run a circuit simulation and measure the timing delays of the cell. These timing details are then captured in a file called liberty file (*.lib* extension) which is then used by the EDA tool to calculate overall timing for the entire design.
-
-**Custom Cell Step #5 Make the openLANE tool accept our inverter in its synthesis and placement:** After creating our own standard library cell (inverter), we make openlane accept our inverter into its design and wherever it needs to use an inverter, it will now use our newly designed inverter instead of using the already existing inverter cell from the standard library.
-	</details>
-	<details>
- 	<summary>STA and Timing Violations Fix and GDS Generation with Custom Library Cells</summary>
-	Finally, we learn how to fix the timing violations by restarting the openlane flow and using a few methods to fix the timing violations.
-Timing analysis shows violations in meeting the required timing for the flops. This needs to be fixed before we proceed with gds generation. To fix timing violations we have the following options:
-		i) Slow down the clock frequency so there is more time for the signals to reach from one point to another. But this reduces the speed of the processor which is not the best option.
-		ii) Ask synthesis tool to optimize timing even at the expense of die size. This can be done through configurations settings where the env variables can be changed to favour delays over die size. But this is also not very optimal as the tool may then use larger size gates even where not really needed. But this is an easier solution as the tool takes care of it.
-		iii) Review the timing report and find out where there is maximal delay and check the logic cell output drive capability and how many gates it is driving and replace weaker logic gates with stronger logic gates to improve specific delay paths. This is an iterative manual process but gives the best results.
+</details>
 	
+<details>
+<summary>Custom Cell Design:</summary>
+<p></p>
+Next, we learn how to make our own custom library cell and include that in the openlane flow.
+Let’s say we want to build a standard library cell such as an inverter. How do we go about creating a cell ourselves from scratch and how do we make the EDA tool use it in its flow?
+<p></p> 
+	
+**What we need to know:**
+
+**Step #1** *→ DRC Rules provided by the Foundry:* We need good understanding of what DRC rules are, how to read them and understand them.
+
+**Step #2** *→ MAGIC tool:* We need to know how to use MAGIC layout tool and how to draw the various layers that go to form the components that are present inside logic cells.
+
+**Step #3** *→ Standard Cell Format:* We need to follow certain requirements for the standard cell so that a tool can automate the placement and routing of these cells:
+i) The height of the cell should be a certain odd multiple of the track dimensions of the process technology so that the tool can have a standardized way of placing and routing.
+<p></p>
+ii) The width of the cell should be a certain even multiple of the track dimensions of the process technology so that the tool can have a standardized way of placing and routing.
+<p></p>
+iii) The input and output pins must be at the intersection of the horizontal and vertical track lines so that metal can be easily routed to those pins of the standard cell during routing stage.
+
+**Step #4** *→ Creating .lib file that contains the timing characterization data:* We need to learn how to characterize a standard layout cell for its timing behavior. This is done by extracting the netlist from the layout and using a circuit simulator like *ngspice* along with *spice model files* we get from Foundry to run a circuit simulation and measure the timing delays of the cell. These timing details are then captured in a file called liberty file (*.lib* extension) which is then used by the EDA tool to calculate overall timing for the entire design.
+
+**Step #5** *→ Make the openLANE tool accept our inverter in its synthesis and placement:* After creating our own standard library cell (inverter), we make openlane accept our inverter into its design and wherever it needs to use an inverter; it will now use our newly designed inverter instead of using the already existing inverter cell from the standard library.
+</details>
+
+<details>
+<summary>STA and Timing Violations Fix and GDS Generation with Custom Library Cells</summary>
+Finally, we learn how to fix the timing violations by restarting the openlane flow and using a few methods to fix the timing violations.
+Timing analysis shows violations in meeting the required timing for the flops. This needs to be fixed before we proceed with GDS generation. To fix timing violations we have the following options:
+<p></p>
+i) Slow down the clock frequency so there is more time for the signals to reach from one point to another. But this reduces the speed of the processor which is not the best option.
+ii) Ask synthesis tool to optimize timing even at the expense of chip size. This can be done through configurations settings where the env variables can be changed to favour delays over chip size. But this is also not very optimal as the tool may then use larger size gates even where not really needed. But this is an easier solution as the tool takes care of it.
+iii) Review the timing report and find out where there is maximum delay and check the logic cell output drive capability and how many gates it is conected to and replace weaker logic gates with stronger logic gates to improve specific delay paths. This is an iterative manual process but gives the best results.
+<p></p>
 In our design, we will try both option ii) and iii) to fix our timing violations.
-	
+<p></p>
 We then proceed with floorplanning, placement, clock tree synthesis, routing, final timing analysis, power delivery network generation and parasitic extraction(SPEF) and post extraction timing analysis. 
-
+<p></p>
 Our design is then fully ready for fabrication!
 	</details>
 </details>
@@ -503,11 +513,11 @@ The openLANE is invoked using the startup commands and the results are shown bel
 	<p align="center">
              <img src="https://github.com/user-attachments/assets/5e9168ae-4232-4d3d-a549-c3a4ce095eaf" width="800"/>
 	</p>
-	The config.tcl file here summarizes all the parameters that are finally used in the execution. Using this file we know what all parameters are set 	for this run.
+	The *config.tcl* file here summarizes all the parameters that are finally used in the execution. Using this file we know what all parameters are set for this run.
 
-Synthesis also runs ABC - what is it ? It does the technology mapping so that the logic gates required to implement the design are picked from what is available in the technology library.
+Synthesis also runs ABC - what is it? It does the technology mapping so that the logic gates required to implement the design are picked from what is available in the technology library.
 
-run_synthesis was the command that gave this success output
+*run_synthesis* is the command that gives the successful output shown below.
 
 <p align="center">
              <img src="https://github.com/user-attachments/assets/f2b45552-ab03-40af-b1a9-8d33171742a4" width="800"/>
@@ -515,16 +525,19 @@ run_synthesis was the command that gave this success output
 <p align="center">
              <img src="https://github.com/user-attachments/assets/915736c6-82d4-41cf-b5a3-9baf85b065f0" width="500"/>
 </p>
-Flop ratio = 1613/14876 =10.84%
 
-Now we open the synthesized netlist (a verilog file ). As expected it shows instances of logic gates along with connectivity using wires.
+<p align="center">
+             𝐅𝐥𝐨𝐩 𝐫𝐚𝐭𝐢𝐨 = 𝟏𝟔𝟏𝟑/𝟏𝟒𝟖𝟕𝟔 =𝟏𝟎.𝟖𝟒%
+</p>
+
+Now we open the synthesized netlist (a verilog file). As expected it shows logic gates along with their connectivity using wires.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/2a03431d-1b89-45b4-9971-da7316ae2034" width="800"/>
 </p>
 <p align="center">
              <img src="https://github.com/user-attachments/assets/7dcf6d3c-05f4-4b46-aa1c-2b93ae7af128" width="400"/>
 </p>
-We now open the synthesis timing report file and observe that there are timing violations reported.
+We now open the synthesis timing report file and observe that timing violations are reported.
 
 <p align="center">
              <img src="https://github.com/user-attachments/assets/96d30830-5321-4111-9a70-f59c8cf01373" width="800"/>
@@ -533,29 +546,10 @@ We now open the synthesis timing report file and observe that there are timing v
 <p align="center">
              <img src="https://github.com/user-attachments/assets/502fdeca-faa8-49e7-bc9e-733cf14fb884" width="700"/>
 </p>
-Slack violated
-
-You shall skip the following steps and move to next Section as what is shown below is not part of the the Lab exercises.
-
-Next, I carry out a small experiment to see if the configuration tcl file can be edited to change the Synthesis Strategy. The image below shows how the synthesis.tcl file inside configurations folder can be edited to change the synthesize strategy from "AREA 0" to "DELAY 0".
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/1b25056a-b05f-4952-9530-6c7d29162591"/>
-</p>
-
-We then check if this change in the configuration is really accepted by the openLANE flow. This is done by restarting the openLANE tool (using the starting openLANE set of commands to prepare the design) and then open the config.tcl present inside the run folder to see if our changes have taken effect.
 
 <p align="center">
-             <img src="https://github.com/user-attachments/assets/261ae0d8-d6a1-49bd-9899-1b14ca726258"/>
-</p>
-
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/6cd8f7ab-bf42-44ee-ae9f-6cdd31374e1f"/>
-</p>
-
-This however did not solve the slack violation completely. We will later see how to completely fix the slack violations.
-We will now continue with the Floorplanning.	
- 
- 
+             *Slack violated*
+</p> 
  
  </details>	
 	<details>
@@ -616,13 +610,13 @@ The run_placement command outputs are shown below. The generated *.def* file and
 </p>
 
 
-Expand command in magic tkcon window shows the actual d flipflop layout containing mosfets. But routing of the dflip flop to other gates not done yet. Because that happens only later when we do run_routing command execution.
+The 'expand' command in magic *tkcon window* shows the actual d-flipflop layout containing mosfets. But routing of the d-flipflop to other gates is not done yet, because this happens only later when we do *run_routing* command execution.
 
 <p align="center">
              <img src="https://github.com/user-attachments/assets/22f06bda-5b10-41a8-8cdc-4a9139f6fe1a"/>
 </p>
 
-We have now successfully completed the openLANE execution flow until placement. We will now take a small detour to understand how to build custom Cell and how to use such custom library cell in openLANE flow. We will then learn how to fix timging violations. And then we will return back to openLANE flow and execute the complete flow till gds creation.
+We have now successfully completed the openLANE execution flow until placement. We will now take a small detour to understand how to build custom Cell and how to use such custom library cells in openLANE flow. We will then learn how to fix timing violations and then we will return back to openLANE flow and execute the complete flow till GDS creation.
 	</details>	 
 
 </details>
@@ -642,7 +636,7 @@ cp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/
 # magic command to open the inverter layout cell pre-built in this repository.
 magic -T sky130A.tech sky130_inv.mag &
 ```
-The results of the command execution are shown below
+The results of the command execution are shown below:
 <p align="center">
              <img src="https://github.com/user-attachments/assets/74858ac2-3699-479f-b2e3-3ba480358ca3"/>
 </p>
@@ -669,14 +663,15 @@ Command “drc why” shows drc error reason that transistor width is insufficie
              <img src="https://github.com/user-attachments/assets/d29f2556-55db-4d13-8d0c-ed2cc2a6a67b" width="300"/>
 </p>
 
-
-Select nwell region
+```python
+#Select nwell region
 erase nwell
-Click a region to expand the pdiff to remove drc violation 
+#Click a region to expand the pdiff to remove drc violation 
 paint pdiff
-Click a region to expand the ndiff to remove drc violation
+#Click a region to expand the ndiff to remove drc violation
 paint ndiff
-
+```
+<p></p>
 With above commands, the DRC violation is fixed
 
 [Above commands are learnt from http://opencircuitdesign.com/magic/index.html]
@@ -856,7 +851,7 @@ The drc error region (white dotted region) correctly points out that it should b
 </p>
 
 
-How magic is able to find the inside edge of dnwell not covered with nwell ?.
+How magic is able to find the inside edge of dnwell not covered with nwell?.
 It uses a templayer nwell_missing 
 Where it makes dnwell grow by 0.4um and_not with dnwell shrink of 1.03um and-not with nwell region. If anything remains, then it is a drc error.
 This complicated rule is compute intensive. But in some cases this is the only way to catch drc errors.
