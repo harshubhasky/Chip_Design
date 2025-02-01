@@ -459,9 +459,9 @@ Let’s say we want to build a standard library cell such as an inverter. How do
 **Step #2** *→ MAGIC tool:* We need to know how to use MAGIC layout tool and how to draw the various layers that go to form the components that are present inside logic cells.
 
 **Step #3** *→ Standard Cell Format:* We need to follow certain requirements for the standard cell so that a tool can automate the placement and routing of these cells:
-i) The height of the cell should be a certain odd multiple of the track dimensions of the process technology so that the tool can have a standardized way of placing and routing.
+i) The height of the cell should be a certain even multiple of the track dimensions of the process technology so that the tool can have a standardized way of placing and routing.
 <p></p>
-ii) The width of the cell should be a certain even multiple of the track dimensions of the process technology so that the tool can have a standardized way of placing and routing.
+ii) The width of the cell should be a certain odd multiple of the track dimensions of the process technology so that the tool can have a standardized way of placing and routing.
 <p></p>
 iii) The input and output pins must be at the intersection of the horizontal and vertical track lines so that metal can be easily routed to those pins of the standard cell during routing stage.
 
@@ -715,9 +715,8 @@ Open the poly.mag file
 </p>
 
 
-Polyres to poly spacing is only 0.21um.
-But it should be atleast 0.48um
-This drc error is not encoded in the tech file so it is not showing as error but fab cannot fabricate this without issues.
+Polyres to poly spacing is only 0.21um but it should be atleast 0.48um.
+This DRC error is not encoded in the tech file so it is not showing as error but fab cannot fabricate this without issues.
 
 Hence we need to fix the tech file to include this rule and then fix the layout to meet that rule.
 <p align="center">
@@ -747,25 +746,28 @@ After editing techfile
 </p>
 
 
-In tkcon windowtech load sky130A.techdrc check
-Now we see white dotted region
-Showing drc error for polyres to poly spacing violation
+In tkcon window we enter the following comands:
+<p></p>
+
+```python
+tech load sky130A.tech
+drc check
+```
+Now we see a white dotted region showing DRC error for polyres to poly spacing violation.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/1b5304f8-f88f-4db6-aef2-864623ba8f68"/>
 </p>
 
 
-Our newly added drc error message shows up for the drc why command after selecting the region of interest in the layout.
+Our newly added DRC error message shows up for the *drc why* command after selecting the region of interest in the layout.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/001f08e2-bb76-4d91-b5a5-829e712696b4"/>
 </p>
 
 
-Click to make a bounding box around the poly region that we want to copy.
+We click to make a bounding box around the poly region that we want to copy, then go to Edit and click 'Select Area'.
+We then move the cursor to the location where we want to copy and press 'c'.
 
-Go to Edit and click Select Area
-
-Move your cursor to the location where you want to copy and press “c”
 <p align="center">
              <img src="https://github.com/user-attachments/assets/898381d8-c403-4f39-b01d-02007f6525a8"/>
 </p>
@@ -777,12 +779,12 @@ Move your cursor to the location where you want to copy and press “c”
 
 
 
-Before editing
+Before editing:
 <p align="center">
              <img src="https://github.com/user-attachments/assets/bc91438c-a346-4d43-a2da-3ea64aa08540"/>
 </p>
 
-After editing
+After editing:
 <p align="center">
              <img src="https://github.com/user-attachments/assets/f7e980e0-453e-40b4-9daf-b3fd92c2b67c"/>
 </p>
@@ -794,7 +796,7 @@ After loading updated techfile, we can now see the drc errors for the poly to nd
 </p>
 
 
-Fixing errors in difftap.2 rules
+Fixing errors in difftap.2 rules:
 <p align="center">
              <img src="https://github.com/user-attachments/assets/db00e45e-1b3e-4ada-b2a7-e37611f3c338"/>
 </p>
@@ -811,7 +813,7 @@ difftap.2 rule shows no violation.
 </p>
 
 
-These lines are added to the tech file to catch the difftap.2 rule violation
+These lines are added to the tech file to catch the difftap.2 rule violation.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/16d55e84-e5f5-4933-aa13-0964c780d64a"/>
 </p>
@@ -822,14 +824,13 @@ These lines are added to the tech file to catch the difftap.2 rule violation
 </p>
 
 
-NWELL drc rule fix
+NWELL DRC rule fix:
 <p align="center">
              <img src="https://github.com/user-attachments/assets/b766cee1-07dd-4350-9553-0e4e1bebd376"/>
 </p>
 
 
-Open nwell.mag file in magic. 
-The selected region is filled with deep nwell
+We open nwell.mag file in magic. The selected region is filled with deep nwell
 <p align="center">
              <img src="https://github.com/user-attachments/assets/f053bdaf-d49c-486c-8d1c-f6b97570d78e"/>
 </p>
@@ -840,7 +841,7 @@ The nwell is drawn as four rectangular regions as highlighted individually above
 </p>
 
 
-Deepnwell to nwell width is only 0.56um
+Deepnwell to nwell width is only 0.56um.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/ea2d8782-f178-45f4-b765-67dfdf881f0f"/>
 </p>
@@ -851,16 +852,15 @@ The drc error region (white dotted region) correctly points out that it should b
 </p>
 
 
-How magic is able to find the inside edge of dnwell not covered with nwell?.
-It uses a templayer nwell_missing 
-Where it makes dnwell grow by 0.4um and_not with dnwell shrink of 1.03um and-not with nwell region. If anything remains, then it is a drc error.
-This complicated rule is compute intensive. But in some cases this is the only way to catch drc errors.
+How magic is able to find the inside edge of dnwell not covered with nwell?
+It uses a templayer *nwell_missing* where it makes dnwell grow by 0.4um and *and_not* with dnwell shrink of 1.03um and *and-not* with nwell region. If anything remains, then it is a DRC error.
+This complicated rule is compute intensive. But in some cases this is the only way to catch DRC errors.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/9e17243f-df4b-45d8-860c-f786dec5692d"/>
 </p>
 
 
-Nwell.4 not implemented
+Nwell.4 not implemented:
 <p align="center">
              <img src="https://github.com/user-attachments/assets/c785b1b1-ddba-4c66-a924-0b15f7a7236b"/>
 </p>
@@ -872,7 +872,7 @@ Hence there is no DRC error even though no contact is placed on this nwell.
 </p>
 
 
-These lines are added to the tech file to catch the missing tap contact
+These lines are added to the tech file to catch the missing tap contact.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/a74d4a83-4fa2-42cd-a7ed-f460b750f388"/>
 </p>
@@ -886,7 +886,8 @@ The techfile is once again loaded in tkcon window and the drc style is set to fu
 </details>	
 <details>
 <summary>Lab Exercise:Custom Cell Design SPICE simulation Results</summary>
-Extracting spice netlist from layout
+<p></p>
+Extracting spice netlist from layout:
 <p align="center">
              <img src="https://github.com/user-attachments/assets/88e3f8d1-3815-4937-9c5d-9e5c6fc6be09"/>
 </p>
@@ -897,7 +898,7 @@ Extracting spice netlist from layout
 </p>
 
 
-File edited for stand-alone simulation in ngspice
+File edited for stand-alone simulation in ngspice:
 <p align="center">
              <img src="https://github.com/user-attachments/assets/793aed13-5c80-4a5b-897c-45696f569454"/>
 </p>
@@ -930,25 +931,26 @@ File edited for stand-alone simulation in ngspice
 
 <details>
 <summary>Lab Exercise:Custom Cell Design Standard Cell Format Results</summary>
-For Place and Route, we dont need all layout info (the one available in .mag file). We only need LEF file ( the boundary of the cell, the pin locations). Also this way, we can also protect our layout IP.
+<p></p>
+For Place and Route, we dont need all layout info (the one available in .mag file). We only need LEF file (the boundary of the cell, the pin locations). Also this way, we can also protect our layout IP.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/cde2c1b0-0bbc-4e51-acb6-cd5fb2cfd247"/>
 </p>
 
 
-For us to be able to use a custom layout file for a standard cell and use it in openlane flow, we have to meet certain criteria so that it plays well along with other such standard cells and can be used by the tool for auto placement and routing.
-
+For us to be able to use a custom layout file for a standard cell and use it in openlane flow, we have to meet certain criteria so that it plays along well with other such standard cells and can be used by the tool for auto placement and routing.
+<p></p>
 Requirements:
-The input and output pins of any standard cell should lie on the intersection of the vertical and horizontal tracks.
-The width of standard cell should be odd multiple of horizontal track pitch
-The height of the standard cell should be even multiple of vertical track pitch
+1. The input and output pins of any standard cell should lie on the intersection of the vertical and horizontal tracks.
+2. The width of standard cell should be odd multiple of horizontal track pitch.
+3. The height of the standard cell should be even multiple of vertical track pitch.
 
 
 Input and output pins are on li1 layer. So we look for li1 track info. 
 <p align="center">
              <img src="https://github.com/user-attachments/assets/06b45147-3803-47f7-9f74-79c7491888ae"/>
 </p>
-This information is used to set grid size in magic
+This information is used to set grid size in magic.
 
 
 This positioning enables the Routing tool to get a metal routing to these pins correctly.
@@ -958,21 +960,27 @@ This positioning enables the Routing tool to get a metal routing to these pins c
 
 
 Horizontal pitch matches with the odd multiple of track pitch requirement.
-Width of standard cell = 1.38um = 3*0.46um
+<p align="center">
+Width of standard cell = 1.38um = 3 × 0.46um
+</p>
+
 <p align="center">
              <img src="https://github.com/user-attachments/assets/51b203d4-4cc4-4551-b8ad-66d080adfa17"/>
 </p>
 
 
 Vertical pitch matches with the even multiple of track vertical pitch requirement.
-Height of standard cell = 2.72um = 0.34um *8
+<p align="center">
+Height of standard cell = 2.72um = 0.34um × 8
+</p>
+
 All three requirements are satisfied by our custom standard cell.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/dcb9d084-1723-4e55-9d31-c39def0cd7dc"/>
 </p>
 
 
-File saved as sky130_inv_newdesign.mag
+File is saved as sky130_inv_newdesign.mag
 LEF file is generated using the command “lef write” in tkcon window.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/3edd6717-03e2-4c57-88a6-55481fcb1eb1"/>
@@ -982,23 +990,23 @@ LEF file is generated using the command “lef write” in tkcon window.
 </p>
 
 
-LEF file is generated as shown
+LEF file is generated as shown:
 <p align="center">
              <img src="https://github.com/user-attachments/assets/20ab4f59-92ab-4511-989d-727ca961aa7c"/>
 </p>
 
-The LEF file and the technology files are copied over to picorv32a src directory
+The LEF file and the technology files are copied over to picorv32a src directory:
 <p align="center">
              <img src="https://github.com/user-attachments/assets/726f6948-f843-4958-bb29-a6f085dee1ab"/>
 </p>
 
-The files are copied and correctly getting listed in the src folder as shown below.
+The files are copied and correctly getting listed in the src folder as shown below:
 <p align="center">
              <img src="https://github.com/user-attachments/assets/193fa530-91f0-45cb-b2e8-332c521e50e3"/>
 </p>
 
 
-The following highlighted lines are added to the design config.tcl file 
+The following highlighted lines are added to the design config.tcl file:
 <p align="center">
              <img src="https://github.com/user-attachments/assets/d24b33e2-b11e-4582-866a-df408ab9ae7b"/>
 </p>
@@ -1018,37 +1026,39 @@ The commands below sets up the new LEF we created into OPENLANE flow.
              <img src="https://github.com/user-attachments/assets/205b89e6-f521-4fba-857b-0c6d56023f8c"/>
 </p>
 
-Run_synthesis command is then executed and the output is shown below.
+Run_synthesis command is then executed and the output is shown below:
 <p align="center">
              <img src="https://github.com/user-attachments/assets/6533d664-a1ac-49d4-b19b-fe91e20cf479"/>
 </p>
 
-Synthesis report file opened to note down total chip area, timing details
-We are not getting the correct cell name sky130_inv_newdesign.
-This is an issue
+Synthesis report file has been opened to note down the total chip area and timing details. We are not getting the correct cell name sky130_inv_newdesign.
+This is an issue.
 
 Since we used a new name for the inverter, it seems to have created a problem. 
 <p align="center">
              <img src="https://github.com/user-attachments/assets/c4973704-3c49-424e-b378-138565aba69d"/>
 </p>
 
-Fix that will get the correct cell name : Need to edit the characterization library files
-This cell name is changed from sky130_vsdinv to sky130_inv_newdesign
+To get the correct cell name we need to edit the characterization library files.
+This cell name is changed from *sky130_vsdinv* to *sky130_inv_newdesign*
 <p align="center">
              <img src="https://github.com/user-attachments/assets/2d9d8484-c5b5-4b8a-a01a-65c7a265ccae"/>
 </p>
 
-This cell name is changed from sky130_vsdinv to sky130_inv_newdesign
+This cell name is changed from *sky130_vsdinv* to *sky130_inv_newdesign*
 <p align="center">
              <img src="https://github.com/user-attachments/assets/bb64b0d9-19ef-4b95-9da2-ed04b1c366f4"/>
 </p>
 
-This cell name is changed from sky130_vsdinv to sky130_inv_newdesign
+This cell name is changed from *sky130_vsdinv* to *sky130_inv_newdesign*
 <p align="center">
              <img src="https://github.com/user-attachments/assets/bb64b0d9-19ef-4b95-9da2-ed04b1c366f4"/>
 </p>
 
-After fixing the library files, we now start over and enter the following commands
+After fixing the library files, we now start over and enter the following commands:
+<p></p>
+
+```python
 cd Desktop/work/tools/openlane_working_dir/openlane
 
 docker
@@ -1060,11 +1070,12 @@ set lefs [glob $::env(DESIGN_DIR)/src/**.lef*]
 add_lefs -src $lefs
 
 run_synthesis
+```
 <p align="center">
              <img src="https://github.com/user-attachments/assets/66b72b76-c031-41d4-be8c-e51aaf9a9162"/>
 </p>
 
-Now the synthesis report is correctly pointing to the new inverter cell name we created!.
+Now the synthesis report is correctly pointing to the new inverter cell name we created!
 <p align="center">
              <img src="https://github.com/user-attachments/assets/ca70bea9-bfc8-4109-b28b-5823d00fdc69"/>
 </p>
@@ -1078,7 +1089,7 @@ We reconfigure the settings to improve timing by letting the tool use stronger b
              <img src="https://github.com/user-attachments/assets/d29de27c-b32f-4ab1-ae06-c2097b0d6c54"/>
 </p>
 
-Worst case negative slack is now zero.  And the chip area has increased as expected.
+Worst case negative slack is now zero. And the chip area has increased as expected.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/5d1faf0d-8735-4698-92f6-77263ded46f8"/>
 </p>
@@ -1088,12 +1099,12 @@ Worst case negative slack is now zero.  And the chip area has increased as expec
 </p>
 
 
-The flow failed.
+The flow has failed.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/f2f8c917-ef21-4f9f-839b-9a47ba642ae6"/>
 </p>
 
-Hence we now try running individual commands that are collectively run by run_floorplan tcl file
+Hence we now try running individual commands that are collectively run by *run_floorplan* tcl file.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/b7ae0cfc-e275-474c-b57d-d919fea6a447"/>
 </p>
@@ -1112,7 +1123,7 @@ Hence we now try running individual commands that are collectively run by run_fl
 </p>
 
 
-Placement is completed
+Placement is completed.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/b672b9de-9e62-4f1e-943b-5ce21d284922"/>
 </p>
@@ -1143,7 +1154,7 @@ Placement is completed
 </p>
 
 
-Learning to run STA with pre-sta.conf and without using synthesis strategy options to compromise die area too much.
+Let's run STA with *pre-sta.conf*:
 <p align="center">
              <img src="https://github.com/user-attachments/assets/90a5d44e-89dd-4aab-8dcd-07d96821063a"/>
 </p>
@@ -1175,13 +1186,13 @@ Learning to run STA with pre-sta.conf and without using synthesis strategy optio
              <img src="https://github.com/user-attachments/assets/ff09c9a7-9005-46f5-b499-e8c3b54cad21"/>
 </p>
 
-Start over again but this time try some config settings
+Let's start over again but this time by trying some configuration settings.
 ![image](https://github.com/user-attachments/assets/d32ce484-9ac5-4a98-8462-4d6b7dcd9976)
 <p align="center">
              <img src="https://github.com/user-attachments/assets/d32ce484-9ac5-4a98-8462-4d6b7dcd9976"/>
 </p>
 
-Trying new configuration settings
+Trying new configuration settings:
 <p align="center">
              <img src="https://github.com/user-attachments/assets/64313b23-b526-46f0-93a1-d533c83c1c5d"/>
 </p>
@@ -1223,7 +1234,7 @@ Trying new configuration settings
              <img src="https://github.com/user-attachments/assets/6f728dfb-13e0-4554-8410-61970bd663db"/>
 </p>
 
-Copy current netlist before committing the ECO changes to the verilog file
+Copy current netlist before committing the ECO changes to the verilog file.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/be9ef3c3-9e21-4d67-8b8b-57f1fbcd8c95"/>
 </p>
@@ -1236,7 +1247,7 @@ Copy current netlist before committing the ECO changes to the verilog file
              <img src="https://github.com/user-attachments/assets/a0f2a396-55ff-4b9a-8b8f-2efd78b54ebb"/>
 </p>
 
-Start over , this time use synthesis config settings to get best results to proceed with placement and CTS generation
+Let's Start over again, this time by using synthesis configuration settings.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/b0b8472e-67bb-4878-adfa-5553845f5561"/>
 </p>
@@ -1256,12 +1267,12 @@ Start over , this time use synthesis config settings to get best results to proc
              <img src="https://github.com/user-attachments/assets/91a8e59c-1391-4590-ac7e-2afac95113ea"/>
 </p>
 
-Then run_placement command is executed
+Then the *run_placement* command is executed.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/390ede01-70cd-496f-b895-4ab6441f8aee"/>
 </p>
 
-Next run_cts command is executed
+Next *run_cts* command is executed.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/f54f8701-46e8-47cc-985f-362876fe14c3"/>
 </p>
@@ -1309,7 +1320,7 @@ Next run_cts command is executed
 </p>
 
 
-We could have just continued with the next step which is pdn generation. But in case we want to shutdown the system and start later and continue from where we left, we can use the following commands to do so.
+We could have just continued with the next step which is PDN generation. But in case we want to shutdown the system and start later and continue from where we left, we can use the following commands to do so.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/3d498033-b4dc-4220-87aa-3e53bad163cb"/>
 </p>
@@ -1333,7 +1344,7 @@ We could have just continued with the next step which is pdn generation. But in 
 <p align="center">
              <img src="https://github.com/user-attachments/assets/88d809b4-c639-4ccb-b17c-f2252ca4057f"/>
 </p>
-We now run the run_routing command to start the routing process. This is a compute intensive step that takes several iterations for the routing to get completed. 
+We now run the *run_routing* command to start the routing process. This step takes several iterations for the routing to get completed. 
 <p align="center">
              <img src="https://github.com/user-attachments/assets/90a08399-c879-4a4f-a513-3ea578c87cc8"/>
 </p>
@@ -1366,7 +1377,7 @@ We now run the run_routing command to start the routing process. This is a compu
              <img src="https://github.com/user-attachments/assets/888f3f8f-6b1b-4726-b051-0204cf2161df"/>
 </p>
 
-The .SPEF file is also generated automatically. So we proceed with final timing analysis using the SPEF file
+The *.SPEF* file is also generated automatically so we proceed with final timing analysis using the SPEF file.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/b5007f42-965a-4944-b3e8-c7ec8d0ba04d"/>
 </p>
@@ -1379,30 +1390,32 @@ The .SPEF file is also generated automatically. So we proceed with final timing 
              <img src="https://github.com/user-attachments/assets/4f67171d-6d50-4cea-b940-e5969b2573fc"/>
 </p>
 
-Next we have to generate gds file. It is not clear how to proceed further. However, when looked into the flow.tcl file, it showed the next steps after routing.
+Next we have to generate GDS file. It is not clear how to proceed further. However, when looked into the *flow.tcl* file, it showed the next steps after routing.
 <p align="center">
 <img src="https://github.com/user-attachments/assets/df03728f-83af-4533-bc21-d349131ce2ed"/>
 </p>
 
-However, running the command %run_magic gave an error that the variable DIE_AREA is not defined in mag_gds.tcl.
-Searching for this mag_gds.tcl it is found to be in the scripts/magic/ folder within openlane.
-This file contents are as shown below.
+However, running the command *%run_magic* gave an error that the variable DIE_AREA is not defined in *mag_gds.tcl*.
+Searching for this *mag_gds.tcl* it is found to be in the *scripts/magic/* folder within openlane.
+This file contents are as shown below:
 <p align="center">
 <img src="https://github.com/user-attachments/assets/b86570c6-5cf3-4b80-b748-396f875c7008"/>
 </p>
-Since the env variable MAGIC_ZEROIZE_ORIGIN is not defined, the program enters the else section and finds the DIE_AREA not defined. Lets define the variable MAGIC_ZEROIZE_ORIGIN using the command
+Since the env variable MAGIC_ZEROIZE_ORIGIN is not defined, the program enters the *else* section and finds the DIE_AREA not to be defined. Lets define the variable MAGIC_ZEROIZE_ORIGIN using the command:
+
+```python
 % set ::env(MAGIC_ZEROIZE_ORIGIN) 1
 
-Now rerun the command
-
+#Now re-run the command.
 %magic_run
+```
 
-The gds file is now generated successfully.
+The GDS file is now generated successfully.
 <p align="center">
 <img src="https://github.com/user-attachments/assets/ba71ced4-a4c9-4fec-8716-a22789956c55"/>
 </p>
 <p align="center">
 <img src="https://github.com/user-attachments/assets/c73a03b3-87b4-4fa7-8baa-290685a9bf06"/>
 </p>
-This concludes the creation of gds file which can be sent to Foundry for Chip manufacturing.
+This concludes the creation of GDS file which can be sent to Foundry for Chip manufacturing.
 </details>
