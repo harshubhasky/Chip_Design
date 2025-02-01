@@ -442,10 +442,58 @@ run_synthesis was the command that gave this success output
 <p align="center">
              <img src="https://github.com/user-attachments/assets/f2b45552-ab03-40af-b1a9-8d33171742a4" width="800"/>
 </p>
-	</details>	
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/915736c6-82d4-41cf-b5a3-9baf85b065f0" width="500"/>
+</p>
+Flop ratio = 1613/14876 =10.84%
+
+Now we open the synthesized netlist (a verilog file ). As expected it shows instances of logic gates along with connectivity using wires.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/2a03431d-1b89-45b4-9971-da7316ae2034" width="800"/>
+</p>
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/7dcf6d3c-05f4-4b46-aa1c-2b93ae7af128" width="400"/>
+</p>
+We now open the synthesis timing report file and observe that there are timing violations reported.
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/96d30830-5321-4111-9a70-f59c8cf01373" width="800"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/502fdeca-faa8-49e7-bc9e-733cf14fb884" width="700"/>
+</p>
+Slack violated
+
+You shall skip the following steps and move to next Section as what is shown below is not part of the the Lab exercises.
+
+Next, I carry out a small experiment to see if the configuration tcl file can be edited to change the Synthesis Strategy. The image below shows how the synthesis.tcl file inside configurations folder can be edited to change the synthesize strategy from "AREA 0" to "DELAY 0".
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/1b25056a-b05f-4952-9530-6c7d29162591"/>
+</p>
+
+We then check if this change in the configuration is really accepted by the openLANE flow. This is done by restarting the openLANE tool (using the starting openLANE set of commands to prepare the design) and then open the config.tcl present inside the run folder to see if our changes have taken effect.
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/261ae0d8-d6a1-49bd-9899-1b14ca726258"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/6cd8f7ab-bf42-44ee-ae9f-6cdd31374e1f"/>
+</p>
+
+This however did not solve the slack violation completely. We will later see how to completely fix the slack violations.
+We will now continue with the Floorplanning.	
+ 
+ 
+ 
+ </details>	
 	<details>
 	<summary>Lab Exercise:OpenLane floorplan</summary>
-	</details>	
+	
+	
+ 
+ 	</details>	
 	<details>
 	<summary>Lab Exercise:OpenLane placement</summary>
 	</details>	
@@ -488,45 +536,6 @@ run_synthesis was the command that gave this success output
 
 
 
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/915736c6-82d4-41cf-b5a3-9baf85b065f0" width="500"/>
-</p>
-Flop ratio = 1613/14876 =10.84%
-
-Now we open the synthesized netlist (a verilog file ). As expected it shows instances of logic gates along with connectivity using wires.
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/2a03431d-1b89-45b4-9971-da7316ae2034" width="800"/>
-</p>
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/7dcf6d3c-05f4-4b46-aa1c-2b93ae7af128" width="400"/>
-</p>
-We now open the synthesis timing report file and observe that there are timing violations reported.
-
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/96d30830-5321-4111-9a70-f59c8cf01373" width="800"/>
-</p>
-
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/502fdeca-faa8-49e7-bc9e-733cf14fb884" width="700"/>
-</p>
-Slack violated
-
-Next, I carry out a small experiment to see if the configuration tcl file can be edited to change the Synthesis Strategy. The image below shows how the synthesis.tcl file inside configurations folder can be edited to change the synthesize strategy from "AREA 0" to "DELAY 0".
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/1b25056a-b05f-4952-9530-6c7d29162591"/>
-</p>
-
-We then check if this change in the configuration is really accepted by the openLANE flow. This is done by restarting the openLANE tool (using the starting openLANE set of commands to prepare the design) and then open the config.tcl present inside the run folder to see if our changes have taken effect.
-
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/261ae0d8-d6a1-49bd-9899-1b14ca726258"/>
-</p>
-
-<p align="center">
-             <img src="https://github.com/user-attachments/assets/6cd8f7ab-bf42-44ee-ae9f-6cdd31374e1f"/>
-</p>
-
-This however did not solve the slack violation completely. We will later see how to completely fix the slack violations.
 
 
 <p align="center">
