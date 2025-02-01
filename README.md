@@ -555,11 +555,26 @@ Expand command in magic tkcon window shows the actual d flipflop layout containi
 
 We have now successfully completed the openLANE execution flow until placement. We will now take a small detour to understand how to build custom Cell and how to use such custom library cell in openLANE flow. We will then learn how to fix timging violations. And then we will return back to openLANE flow and execute the complete flow till gds creation.
 	</details>	 
------------------------------------------------------------------------------------------------------------
+
 </details>
 <details>
 <summary>Custom Cell Design Results</summary>	
-	For this exercise, we use 
+	For this exercise, we clone a github repository as shown below.
+
+# cd to openlane
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+# Clone the repository
+git clone https://github.com/nickson-jose/vsdstdcelldesign
+
+# cd into repository directory
+cd vsdstdcelldesign
+
+# Copy magic tech file to this folder so we can locally edit it for this exercise 
+cp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech .
+
+# magic command to open the inverter layout cell pre-built in this repository.
+magic -T sky130A.tech sky130_inv.mag &
 	<details>
 	<summary>Lab Exercise:Custom Cell Design DRC Experiments</summary>
 	</details>	
