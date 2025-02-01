@@ -943,60 +943,7 @@ The following highlighted lines are added to the design config.tcl file
 </details>	
 </details>
 <details>
-<summary>STA and Timing Violations Fix Results</summary>	
-	
-</details>
-<details>
-<summary>Comple OpenLane Flow Results using Custom Library Cell </summary>	
-	
-</details>
-
-
-
-
-
-<br><br>
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**DAY 3**
-
-
-
-
-
-
-
-
-DAY 4
-
-
-
-
+<summary>STA and Timing Violations Fix and GDS generation with custom library cell</summary>	
 Starting openlane all over from docker setup.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/e6486fbd-d37b-44fe-9d05-9edfaaead14d"/>
@@ -1132,7 +1079,7 @@ Placement is completed
 </p>
 
 
-Learning to run STA with pre-sta.conf and without using synthesis strategy options to compromise die area.
+Learning to run STA with pre-sta.conf and without using synthesis strategy options to compromise die area too much.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/90a5d44e-89dd-4aab-8dcd-07d96821063a"/>
 </p>
@@ -1298,8 +1245,6 @@ Next run_cts command is executed
 </p>
 
 
-## Day 5
-
 We could have just continued with the next step which is pdn generation. But in case we want to shutdown the system and start later and continue from where we left, we can use the following commands to do so.
 <p align="center">
              <img src="https://github.com/user-attachments/assets/3d498033-b4dc-4220-87aa-3e53bad163cb"/>
@@ -1389,6 +1334,55 @@ The .SPEF file is also generated automatically. So we proceed with final timing 
 <p align="center">
              <img src="https://github.com/user-attachments/assets/c57867b5-dc25-45d2-b7d3-1aebcf743d44" width="800"/>
 </p>
+	
+</details>
+
+
+
+
+
+<br><br>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**DAY 3**
+
+
+
+
+
+
+
+
+DAY 4
+
+
+
+
 
 
 ## Chip Fabrication Steps:
