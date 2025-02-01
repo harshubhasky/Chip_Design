@@ -2,10 +2,11 @@
 <p align="center">
   <img src="https://github.com/user-attachments/assets/75a9573a-0fd2-46ee-8bff-d7d02f78477a" width="1200" height="300"/>
 </p>
-
-## Introduction to Chip
 <details>
 <summary>Let's learn the fundamentals! 🦾</summary>
+	<details>
+	<summary>Introduction to the "Chip on the outside" </summary>	
+	
 In this project, let's go over all the fundamentals: from designing a chip to (fill it in later)  
 We have all seen an Arduino board somewhere or somehow. In this project, we will be talking about the industry that lies within its chip. <br>
 <p align="center">
@@ -54,6 +55,71 @@ It requires intelligence to build the blocks in the chip.
 
 The parts marked with the arrows to the right are called *Macros*. 
 Macros: They are pure digital logic.
+</details>
+
+<details>
+<summary>Introduction to "Chip on the inside" </summary>
+## Chip Fabrication Steps:
+### #1 Creating an Isolation Region
+![image](https://github.com/user-attachments/assets/b26ab5db-74d0-49b9-ac57-141a6e153db1)
+1. First a layer of thin Silicon Oxide is placed. (brown in img)
+2. On top of that Silicon Nitrate is placed. (blue in img)
+3. A layer of Photoresist is placed. (white in img)
+4. A mask is placed over the places we want to preserve/protect. (red in img)
+5. UV light is shone on the entire thing to remove the Photoresist in the parts that are not protected by the mask.
+   ![image](https://github.com/user-attachments/assets/16d7b912-3e93-4f0c-be9a-dc0c29f70340)
+6. We remove the masks and then etch off the Silicon Nitrate. It will be etched off in the places where the Photoresist is not present.
+  ![image](https://github.com/user-attachments/assets/c63eeae9-fb8c-43d8-81fa-866073feebc7)
+7. The Photoresist is removed. Then we place the entire thing in an oxidation furnace. The parts where the Silicon Nitrate is not present will grow. This process is called *LOCOS[Local Oxidation of Silicon]*. The places where the bulge growth starts from are known as the *Bird's Beak*.
+   ![image](https://github.com/user-attachments/assets/ba2a61a5-ecad-4cd5-bd1c-6f6d60bf9430)
+8. The Silicon Nitrate is removed and we get a surface such that transistors are not in direct contact with each other. We have created an electrical isolation.
+   ![image](https://github.com/user-attachments/assets/d670d272-45e4-485c-b8dc-2a9af0b8dea8)
+
+### #2 N-Well and P-Well Formation
+1. The same procedure is followed to protect the left side.
+  ![image](https://github.com/user-attachments/assets/d735c796-a514-49ac-89f4-3207886bbda9)
+2. After the Photoresist has been removed on the right, atoms of Boron are hit with high force to diffuse into the P-Substrate. A P-well is formed.
+   ![image](https://github.com/user-attachments/assets/74864098-f67f-4bb0-a2ca-9b16cdb3fe23)
+3. Similarly atoms of Phosphorus are hit with high force to diffuse into the P-Substrate. A N-well is formed.
+  ![image](https://github.com/user-attachments/assets/2b552100-4ace-438f-a5c8-a12c43abc098)
+4. The entire Substrate in heated in a high temperature furnace for a long time. This will drive in the the atoms into the P-Subrates, forming clear visible wells. This process is called *twin tub process*.
+   ![image](https://github.com/user-attachments/assets/9c1c13e6-d5cb-4dee-ac43-9315eb39b9b4)
+
+### #3 Formation of Gate Terminal
+1. Just like before, we hit Boron atoms on the right side, but this time at a low energy so that is only lies on the surface.
+   ![image](https://github.com/user-attachments/assets/2b2493a5-c5d6-405b-a00d-2d26602097f4)
+2. The same is done on the left side. We can either use Phosphorus or Arsenic atoms. [Arsenic atoms will not penertate deep into the Substrate]
+   ![image](https://github.com/user-attachments/assets/1423c48f-f9a3-4412-a024-25d3ad620bcf)
+3. But when this doping is done, damages occur in the Slicone Oxide layer. To fix this, the damaged oxide is stripped off using dilute hydrofluric acid.
+  ![image](https://github.com/user-attachments/assets/dedef78c-1680-4059-9aaf-03f46f8d60e1)
+  And then the oxide layer is re-grown again.
+  ![image](https://github.com/user-attachments/assets/f4a3738d-ef6c-4081-bfc8-5e8c7d557dd4)
+4. We grow a thick polysilicon layer on it. The gate area is supossed to be of low ressistance, so we top it with N-type impurities.
+   ![image](https://github.com/user-attachments/assets/7cc0dd89-ee58-4e7c-9cac-a609a94cd4fb)
+5. We make the following structure.
+   ![image](https://github.com/user-attachments/assets/19a0f089-d3e5-4077-b52e-107e530ecc2a)
+6. Only the area under the Photoresist remains and we obtain our gates.
+   ![image](https://github.com/user-attachments/assets/60d67641-a640-4b2a-ae31-f0a062870eb9)
+
+### #4 Lightly Doped Drain Formation(LDD)
+ Two reasons for doing this are to prevent: → Hot electron effect
+				            → Short channel effect
+1. Phosphorus is very lightly doped at the surface level of the P-well.
+   ![image](https://github.com/user-attachments/assets/ada24080-f6af-4b46-928c-b9b6a25993c1)
+2. SImilarly Boron is also very lightly doped on the surface of the N-well.
+   ![image](https://github.com/user-attachments/assets/6fdcd325-e14a-4845-aef9-4248df0bc64b)
+3. Since these layer are very thin, we need to protect them. To do this, *Plsama Anisotropic Etching* is done using Silicon Nitrate.
+   ![image](https://github.com/user-attachments/assets/228f98c7-c4b5-4bc3-afb9-8fb6d409ca32)
+   The Silicon Nitrate sticks to the ends of the gates and rest gets washed away.
+   ![image](https://github.com/user-attachments/assets/4bdd65a3-e171-49eb-b50b-6f6b5b34ec99)
+   Thus, the doped atoms under the Silicon Nitrate are protected.
+   
+### #5 Source and Drain Formation
+1. A thin screen oxide is added to to prevent the doped ions from directly going to the substrate without hitting anywhere. By adding this, we randomize the direction of the ions.
+   ![image](https://github.com/user-attachments/assets/d38c72ec-f23c-43a0-a8d1-20d030faabe9)
+2. Arsenic is then doped. And we obtain N+,N-,P as required.
+   ![image](https://github.com/user-attachments/assets/b801d5a3-c9dc-4a59-a673-59140c113d5a)
+</details>	
 </details>
 
 ## RISC-V Instruction Set Architecture(ISA)
@@ -1340,67 +1406,6 @@ The .SPEF file is also generated automatically. So we proceed with final timing 
 
 
 
-## Chip Fabrication Steps:
-
-### #1 Creating an Isolation Region
-![image](https://github.com/user-attachments/assets/b26ab5db-74d0-49b9-ac57-141a6e153db1)
-1. First a layer of thin Silicon Oxide is placed. (brown in img)
-2. On top of that Silicon Nitrate is placed. (blue in img)
-3. A layer of Photoresist is placed. (white in img)
-4. A mask is placed over the places we want to preserve/protect. (red in img)
-5. UV light is shone on the entire thing to remove the Photoresist in the parts that are not protected by the mask.
-   ![image](https://github.com/user-attachments/assets/16d7b912-3e93-4f0c-be9a-dc0c29f70340)
-6. We remove the masks and then etch off the Silicon Nitrate. It will be etched off in the places where the Photoresist is not present.
-  ![image](https://github.com/user-attachments/assets/c63eeae9-fb8c-43d8-81fa-866073feebc7)
-7. The Photoresist is removed. Then we place the entire thing in an oxidation furnace. The parts where the Silicon Nitrate is not present will grow. This process is called *LOCOS[Local Oxidation of Silicon]*. The places where the bulge growth starts from are known as the *Bird's Beak*.
-   ![image](https://github.com/user-attachments/assets/ba2a61a5-ecad-4cd5-bd1c-6f6d60bf9430)
-8. The Silicon Nitrate is removed and we get a surface such that transistors are not in direct contact with each other. We have created an electrical isolation.
-   ![image](https://github.com/user-attachments/assets/d670d272-45e4-485c-b8dc-2a9af0b8dea8)
-
-### #2 N-Well and P-Well Formation
-1. The same procedure is followed to protect the left side.
-  ![image](https://github.com/user-attachments/assets/d735c796-a514-49ac-89f4-3207886bbda9)
-2. After the Photoresist has been removed on the right, atoms of Boron are hit with high force to diffuse into the P-Substrate. A P-well is formed.
-   ![image](https://github.com/user-attachments/assets/74864098-f67f-4bb0-a2ca-9b16cdb3fe23)
-3. Similarly atoms of Phosphorus are hit with high force to diffuse into the P-Substrate. A N-well is formed.
-  ![image](https://github.com/user-attachments/assets/2b552100-4ace-438f-a5c8-a12c43abc098)
-4. The entire Substrate in heated in a high temperature furnace for a long time. This will drive in the the atoms into the P-Subrates, forming clear visible wells. This process is called *twin tub process*.
-   ![image](https://github.com/user-attachments/assets/9c1c13e6-d5cb-4dee-ac43-9315eb39b9b4)
-
-### #3 Formation of Gate Terminal
-1. Just like before, we hit Boron atoms on the right side, but this time at a low energy so that is only lies on the surface.
-   ![image](https://github.com/user-attachments/assets/2b2493a5-c5d6-405b-a00d-2d26602097f4)
-2. The same is done on the left side. We can either use Phosphorus or Arsenic atoms. [Arsenic atoms will not penertate deep into the Substrate]
-   ![image](https://github.com/user-attachments/assets/1423c48f-f9a3-4412-a024-25d3ad620bcf)
-3. But when this doping is done, damages occur in the Slicone Oxide layer. To fix this, the damaged oxide is stripped off using dilute hydrofluric acid.
-  ![image](https://github.com/user-attachments/assets/dedef78c-1680-4059-9aaf-03f46f8d60e1)
-  And then the oxide layer is re-grown again.
-  ![image](https://github.com/user-attachments/assets/f4a3738d-ef6c-4081-bfc8-5e8c7d557dd4)
-4. We grow a thick polysilicon layer on it. The gate area is supossed to be of low ressistance, so we top it with N-type impurities.
-   ![image](https://github.com/user-attachments/assets/7cc0dd89-ee58-4e7c-9cac-a609a94cd4fb)
-5. We make the following structure.
-   ![image](https://github.com/user-attachments/assets/19a0f089-d3e5-4077-b52e-107e530ecc2a)
-6. Only the area under the Photoresist remains and we obtain our gates.
-   ![image](https://github.com/user-attachments/assets/60d67641-a640-4b2a-ae31-f0a062870eb9)
-
-### #4 Lightly Doped Drain Formation(LDD)
- Two reasons for doing this are to prevent: → Hot electron effect
-				            → Short channel effect
-1. Phosphorus is very lightly doped at the surface level of the P-well.
-   ![image](https://github.com/user-attachments/assets/ada24080-f6af-4b46-928c-b9b6a25993c1)
-2. SImilarly Boron is also very lightly doped on the surface of the N-well.
-   ![image](https://github.com/user-attachments/assets/6fdcd325-e14a-4845-aef9-4248df0bc64b)
-3. Since these layer are very thin, we need to protect them. To do this, *Plsama Anisotropic Etching* is done using Silicon Nitrate.
-   ![image](https://github.com/user-attachments/assets/228f98c7-c4b5-4bc3-afb9-8fb6d409ca32)
-   The Silicon Nitrate sticks to the ends of the gates and rest gets washed away.
-   ![image](https://github.com/user-attachments/assets/4bdd65a3-e171-49eb-b50b-6f6b5b34ec99)
-   Thus, the doped atoms under the Silicon Nitrate are protected.
-   
-### #5 Source and Drain Formation
-1. A thin screen oxide is added to to prevent the doped ions from directly going to the substrate without hitting anywhere. By adding this, we randomize the direction of the ions.
-   ![image](https://github.com/user-attachments/assets/d38c72ec-f23c-43a0-a8d1-20d030faabe9)
-2. Arsenic is then doped. And we obtain N+,N-,P as required.
-   ![image](https://github.com/user-attachments/assets/b801d5a3-c9dc-4a59-a673-59140c113d5a)
 
 
 
