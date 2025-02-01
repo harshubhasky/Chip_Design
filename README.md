@@ -324,7 +324,7 @@ Inside each of the *results*, *reports*, and *logs* folder, there will be multip
 
 ### Let's understand the directory structure of openPDK
 
-*Folder: openlane_working_dir  → pdks  → [*open_pdks*, *skywater-pdk*, *sky130A*]
+Folder: openlane_working_dir  → pdks  → [*open_pdks*, *skywater-pdk*, *sky130A*]
 		
 These are the three folders we find inside the pdks folder. 
 
@@ -336,8 +336,11 @@ These are the three folders we find inside the pdks folder.
 
 </details>
 
+
 <details>
-<summary>𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜 𝚝𝚘 𝚂𝚝𝚊𝚛𝚝 𝙾𝚙𝚎𝚗𝙻𝙰𝙽𝙴 𝙴𝙳𝙰 𝚃𝚘𝚘𝚕</summary>
+<summary>𝙾𝚙𝚎𝚗𝙻𝙰𝙽𝙴 𝙲𝚘𝚖𝚖𝚊𝚗𝚍 𝙵𝚕𝚘𝚠</summary>
+
+Commands to Start OpenLANE EDA Tool
 	
 ```python
 #docker
@@ -347,12 +350,7 @@ $./flow.tcl -interactive
 
 %prep -design picorv32a 
 ```
-
-Above commands will be used every time we setup the openLANE EDA tool.
-</details>
-
-<details>
-<summary>𝙾𝚙𝚎𝚗𝙻𝙰𝙽𝙴 𝙲𝚘𝚖𝚖𝚊𝚗𝚍 𝙵𝚕𝚘𝚠</summary>
+*Above commands will be used every time we setup the openLANE EDA tool.*
 
 The major steps we follow to take in the RTL and PDK information and generate a GDS file for Foundry fabrication are executed using the following sequence of commands.
 
