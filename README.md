@@ -434,22 +434,8 @@ Our design is then fully ready for fabrication!
 	</details>	
 </details>
 <details>
-<summary>Custom Cell Design Results</summary>	
-	<details>
-	<summary>Lab Exercise:Custom Cell Design DRC Experiments</summary>
-	</details>	
-	<details>
-	<summary>Lab Exercise:Custom Cell Design Magic Layout</summary>
-	</details>	
-	<details>
-	<summary>Lab Exercise:Custom Cell Design Standard Cell Format Results</summary>
-	</details>	
-	<details>
-	<summary>Lab Exercise:Custom Cell Design Lib file creation</summary>
-	</details>	
-	<details>
-	<summary>Lab Exercise:Custom Cell Design integration into openLANE</summary>
-	</details>	
+<summary>STA and Timing Violations Fix Results</summary>	
+	
 </details>
 
 
