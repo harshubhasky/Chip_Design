@@ -1089,6 +1089,158 @@ Copy current netlist before committing the ECO changes to the verilog file
              <img src="https://github.com/user-attachments/assets/be9ef3c3-9e21-4d67-8b8b-57f1fbcd8c95"/>
 </p>
 
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/3c29e7ea-320a-4c72-8b47-fc5ce08052f7"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/a0f2a396-55ff-4b9a-8b8f-2efd78b54ebb"/>
+</p>
+
+Start over , this time use synthesis config settings to get best results to proceed with placement and CTS generation
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/b0b8472e-67bb-4878-adfa-5553845f5561"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/1d6790ba-27ff-4058-92df-c93e3be44c29"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/b928afc9-ba85-4f0c-88f3-0438c63d6510"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/91a8e59c-1391-4590-ac7e-2afac95113ea"/>
+</p>
+
+Then run_placement command is executed
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/390ede01-70cd-496f-b895-4ab6441f8aee"/>
+</p>
+
+Next run_cts command is executed
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/f54f8701-46e8-47cc-985f-362876fe14c3"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/bfdd25cd-54bb-4d42-b66b-5ff2f3d002a9"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/9cf6e418-eebc-42d5-9e58-9873c7328c14"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/dcf0b727-c2f5-4b78-8fb9-c8dd457dc709"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/3bea3682-354b-4a19-a4cb-337a70fc7fd6"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/7bc3f19e-e779-45f1-bf9e-69deaeb22cbb"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/8b1ade5f-8ff6-4c66-8488-c01455530b55"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/099a55a4-389c-45df-bb55-b3e6dcdd067c"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/46f60623-a1a1-477b-9457-ef4b4d4a328c"/>
+</p>
+
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/db737b3e-0589-4c01-8f4f-3f4aa09ac171"/>
+</p>
+
+
+## Day 5
+
+We could have just continued with the next step which is pdn generation. But in case we want to shutdown the system and start later and continue from where we left, we can use the following commands to do so.
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/3d498033-b4dc-4220-87aa-3e53bad163cb"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/31a166b0-25b1-43c1-a1df-dad0d990273a"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/b932c4bf-9abe-4e4e-974e-3876b5afcee0"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/dc2fe2d8-8562-4948-ab03-a0c757724a24"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/adc9dd70-ff29-4322-bd56-ed79c1546869"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/88d809b4-c639-4ccb-b17c-f2252ca4057f"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/90a08399-c879-4a4f-a513-3ea578c87cc8"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/6ca95d13-8804-43f3-a105-fed8c131f3d6"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/693ab8a3-c321-40fb-88f7-4ca976c60282"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/09a60b48-0649-40cb-88ac-e369f4940485"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/7b572ba0-9327-4238-a3c8-c10b5ea784ed"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/95052db6-7b5b-4fd9-b498-8225bd4c843e"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/ae02ca82-fe1c-40ae-920c-67cfc1706275"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/888f3f8f-6b1b-4726-b051-0204cf2161df"/>
+</p>
+
+The .SPEF file is also generated automatically. So we proceed with final timing analysis using the SPEF file
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/b5007f42-965a-4944-b3e8-c7ec8d0ba04d"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/e90a4b7a-4147-4ec3-8121-a24f64f0cde0"/>
+</p>
+
+<p align="center">
+             <img src="https://github.com/user-attachments/assets/4f67171d-6d50-4cea-b940-e5969b2573fc"/>
+</p>
 
 
 
