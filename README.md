@@ -2,9 +2,9 @@
 <p align="center">
   <img src="https://github.com/user-attachments/assets/75a9573a-0fd2-46ee-8bff-d7d02f78477a" width="1200" height="300"/>
 </p>
+
+## Let's learn the fundamentals! 🦾
 <details>
-<summary>Let's learn the fundamentals! 🦾</summary>
-	<details>
 	<summary>Introduction to the "Chip on the outside" </summary>	
 	
 In this project, let's go over all the fundamentals: from designing a chip to (fill it in later)  
@@ -122,7 +122,7 @@ Macros: They are pure digital logic.
 2. Arsenic is then doped. And we obtain N+,N-,P as required.
    ![image](https://github.com/user-attachments/assets/b801d5a3-c9dc-4a59-a673-59140c113d5a)
 </details>	
-</details>
+
 
 ## RISC-V Instruction Set Architecture(ISA)
 <details>
